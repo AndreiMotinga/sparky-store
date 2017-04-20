@@ -11,10 +11,10 @@ Spree.config do |config|
   # Core:
 
   # Default currency for new sites
-  config.currency = "USD"
+  # config.currency = "USD"
 
   # from address for transactional emails
-  config.mails_from = "store@example.com"
+  # config.mails_from = "store@example.com"
 
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
@@ -55,13 +55,13 @@ end
 Spree::Frontend::Config.configure do |config|
   config.use_static_preferences!
 
-  config.locale = 'en'
+  config.locale = :ru
 end
 
 Spree::Backend::Config.configure do |config|
   config.use_static_preferences!
 
-  config.locale = 'en'
+  config.locale = :ru
 end
 
 Spree::Api::Config.configure do |config|
@@ -71,3 +71,5 @@ Spree::Api::Config.configure do |config|
 end
 
 Spree.user_class = "Spree::LegacyUser"
+
+SolidusI18n::Config.available_locales = [:ru, :ro, :'en-GB'] # displayed on frontend select box
