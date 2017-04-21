@@ -4,20 +4,24 @@
 <!--[if IE 8 ]>    <html class="ie ie8" lang="<%= I18n.locale %>"> <![endif]-->
 <!--[if IE 9 ]>    <html class="ie ie9" lang="<%= I18n.locale %>"> <![endif]-->
 <!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
-  <head data-hook="inside_head">
-    <%= render :partial => 'spree/shared/head' %>
-  </head>
+<head data-hook="inside_head">
+  <%= render :partial => 'spree/shared/head' %>
+</head>
 
-  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      <%= render "spree/shared/header" %>
-      <%= render "spree/shared/drawer" %>
-      <div class="android-content mdl-layout__content">
-        <%= flash_messages %>
-        <%= taxon_breadcrumbs(@taxon) %>
-        <%= yield %>
-        <%= render "spree/shared/footer" %>
+<body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <%= render "spree/shared/header" %>
+    <%= render "spree/shared/drawer" %>
+    <div class="android-content mdl-layout__content mdl-color--grey-100">
+      <div>
+        <div class="mdl-grid">
+          <%= flash_messages %>
+          <%= taxon_breadcrumbs(@taxon) %>
+          <%= yield %>
+        </div>
       </div>
+      <%= render "spree/shared/footer" %>
     </div>
-  </body>
+  </div>
+</body>
 </html>
