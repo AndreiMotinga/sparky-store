@@ -72,4 +72,4 @@ end
 
 Spree.user_class = "Spree::LegacyUser"
 
-SolidusI18n::Config.available_locales = [:ru, :ro, :'en-GB'] # displayed on frontend select box
+SolidusI18n::Config.available_locales = [:ru, :ro, :"en-US"] # displayed on frontend select box
