@@ -26,6 +26,7 @@ gem "material_icons"
 gem "slim-rails"
 
 group :development do
+  gem 'guard-livereload', '~> 2.5', require: false
   gem "spring"
   gem "spring-commands-rspec"
   gem "web-console"
