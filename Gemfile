@@ -22,6 +22,8 @@ gem "solidus"
 gem "solidus_auth_devise"
 gem "solidus_i18n", github: "solidusio-contrib/solidus_i18n", branch: "master"
 
+gem "material_design_lite-rails", "~> 1.3"
+
 group :development do
   gem "spring"
   gem "spring-commands-rspec"
