@@ -13,26 +13,11 @@
       <%= render "spree/shared/header" %>
       <%= render "spree/shared/drawer" %>
       <div class="android-content mdl-layout__content">
-
-
+        <%= flash_messages %>
+        <%= taxon_breadcrumbs(@taxon) %>
         <%= render "spree/shared/android_content" %>
-
-        <div class="container">
-          <div id="wrapper" class="row" data-hook>
-            <%= taxon_breadcrumbs(@taxon) %>
-              <%= flash_messages %>
-              <%= yield %>
-            </div>
-            <%= yield :templates %>
-          </div>
-          <%= render :partial => 'spree/shared/footer' %>
-        </div>
-
-
-
-
-
-
+        <%= yield %>
+        <%= render "spree/shared/footer" %>
       </div>
     </div>
   </body>
