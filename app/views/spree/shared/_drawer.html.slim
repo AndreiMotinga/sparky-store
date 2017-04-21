@@ -1,27 +1,33 @@
 .android-drawer.mdl-layout__drawer
   span.mdl-layout-title
-    /img.android-logo-image src="images/android-logo-white.png" /
-  nav.mdl-navigation
+    = logo "android-logo-image"
+  nav#taxonomies.sidebar-item.mdl-navigation data-hook=""
+    - max_level = Spree::Config[:max_level_in_taxons_menu] || 3
+    - @taxonomies.each do |taxonomy|
+      - cache [I18n.locale, taxonomy, max_level] do
+        .android-drawer-separator
+        h6.taxonomy-root= Spree.t(:shop_by_taxonomy, taxonomy: taxonomy.name)
+        = taxons_tree(taxonomy.root, @taxon, max_level)
     a.mdl-navigation__link href=""  Phones
-    a.mdl-navigation__link href=""  Tablets
-    a.mdl-navigation__link href=""  Wear
-    a.mdl-navigation__link href=""  TV
-    a.mdl-navigation__link href=""  Auto
-    a.mdl-navigation__link href=""  One
-    a.mdl-navigation__link href=""  Play
-    .android-drawer-separator
-    span.mdl-navigation__link href=""  Versions
-    a.mdl-navigation__link href=""  Lollipop 5.0
-    a.mdl-navigation__link href=""  KitKat 4.4
-    a.mdl-navigation__link href=""  Jelly Bean 4.3
-    a.mdl-navigation__link href=""  Android history
-    .android-drawer-separator
-    span.mdl-navigation__link href=""  Resources
-    a.mdl-navigation__link href=""  Official blog
-    a.mdl-navigation__link href=""  Android on Google+
-    a.mdl-navigation__link href=""  Android on Twitter
-    .android-drawer-separator
-    span.mdl-navigation__link href=""  For developers
-    a.mdl-navigation__link href=""  App developer resources
-    a.mdl-navigation__link href=""  Android Open Source Project
-    a.mdl-navigation__link href=""  Android SDK
+    /a.mdl-navigation__link href=""  Tablets
+    /a.mdl-navigation__link href=""  Wear
+    /a.mdl-navigation__link href=""  TV
+    /a.mdl-navigation__link href=""  Auto
+    /a.mdl-navigation__link href=""  One
+    /a.mdl-navigation__link href=""  Play
+    /span.mdl-navigation__link href=""  Versions
+    /a.mdl-navigation__link href=""  Lollipop 5.0
+    /a.mdl-navigation__link href=""  KitKat 4.4
+    /a.mdl-navigation__link href=""  Jelly Bean 4.3
+    /a.mdl-navigation__link href=""  Android history
+    /.android-drawer-separator
+    /span.mdl-navigation__link href=""  Resources
+    /a.mdl-navigation__link href=""  Official blog
+    /a.mdl-navigation__link href=""  Android on Google+
+    /a.mdl-navigation__link href=""  Android on Twitter
+    /.android-drawer-separator
+    /span.mdl-navigation__link href=""  For developers
+    /a.mdl-navigation__link href=""  App developer resources
+    /a.mdl-navigation__link href=""  Android Open Source Project
+    /a.mdl-navigation__link href=""  Android SDK
+

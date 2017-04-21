@@ -15,8 +15,8 @@
       <div class="android-content mdl-layout__content">
 
 
-        <%= render :partial => 'spree/shared/nav_bar' %>
-        <%= render :partial => 'spree/shared/main_nav_bar' if store_menu? %>
+        <%= render "spree/shared/nav_bar" %>
+        <%# <%= render :partial => 'spree/shared/main_nav_bar' if store_menu? %>
         <%= render "spree/shared/android_content" %>
         <div class="container">
           <div id="wrapper" class="row" data-hook>
