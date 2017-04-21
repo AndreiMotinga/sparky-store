@@ -10,14 +10,20 @@
       label.mdl-button.mdl-js-button.mdl-button--icon for="search-field"
         i.material-icons search
       .mdl-textfield__expandable-holder
-        input#search-field.mdl-textfield__input type="text" /
+        = render "spree/shared/search"
     /! Navigation
     .android-navigation-container
-      nav.android-navigation.mdl-navigation
+      nav#top-nav-bar.android-navigation.mdl-navigation
         a.mdl-navigation__link.mdl-typography--text-uppercase href=""  About
         a.mdl-navigation__link.mdl-typography--text-uppercase href=""  Contacts
         a.mdl-navigation__link.mdl-typography--text-uppercase href=""  Delivery
         a.mdl-navigation__link.mdl-typography--text-uppercase href=""  Catalogs
+        - if spree_current_user
+            = link_to Spree.t(:my_account), spree.account_path, class: "mdl-navigation__link mdl-typography--text-uppercase"
+            = link_to Spree.t(:logout), spree.logout_path, class: "mdl-navigation__link mdl-typography--text-uppercase"
+        - else
+            = link_to Spree.t(:login), spree.login_path, class: "mdl-navigation__link mdl-typography--text-uppercase"
+
     span.android-mobile-title.mdl-layout-title
       /img.android-logo-image src="images/android-logo.png" /
     button#more-button.android-more-button.mdl-button.mdl-js-button.mdl-button--icon.mdl-js-ripple-effect
