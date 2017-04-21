@@ -7,5 +7,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require spree/frontend
-//= require spree/frontend/solidus_i18n
 //= require_tree .
