@@ -1,14 +1,33 @@
-html {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-html,
 body {
-  height: 100%;
+  margin: 0;
 }
+
+/* Disable ugly boxes around images in IE10 */
+a img{
+  border: 0px;
+}
+
+// TODO: replace with variable colors
+::-moz-selection {
+  background-color: #6ab344;
+  color: #fff;
+}
+
+// TODO: replace with variable colors
+::selection {
+  background-color: #6ab344;
+  color: #fff;
+}
+
+
+// TODO: header here
+.demo-layout-transparent {
+  background: url('../assets/demos/transparent.jpg') center / cover;
+ }
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+  /* This background is dark, so we set text to white. Use 87% black instead if
+     your background is light. */
+  color: black;
+}
+
