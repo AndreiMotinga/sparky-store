@@ -1,0 +1,21 @@
+- cache [I18n.locale, current_pricing_options, @product] do
+  .mdl-grid[data-hook="product_show" itemscope itemtype="http://schema.org/Product" style="border: thin solid black;"]
+    .mdl-cell.mdl-cell--4-col.mdl-cell--12-col-tablet style="border: thin solid red;"
+      #product-images[data-hook="product_images"]
+        #main-image[data-hook]
+          = render :partial => 'image'
+        #thumbnails[data-hook]
+          = render :partial => 'thumbnails'
+      div[data-hook="product_properties"]
+        = render :partial => 'properties'
+      div[data-hook="promotions"]
+        = render :partial => 'promotions'
+    .mdl-cell.mdl-cell--8-col.mdl-cell--12-col-tablet style="border: thin solid red;"
+      #product-description[data-hook="product_description"]
+        h1.product-title[itemprop="name"]
+          = @product.name
+        div[itemprop="description" data-hook="description"]
+          = product_description(@product) rescue Spree.t(:product_has_no_description)
+        #cart-form[data-hook="cart_form"]
+          = render :partial => 'cart_form'
+      = render :partial => 'taxons'
