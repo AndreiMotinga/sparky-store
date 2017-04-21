@@ -8,26 +8,23 @@ a img{
 }
 
 // TODO: replace with variable colors
-::-moz-selection {
-  background-color: #6ab344;
-  color: #fff;
-}
-
-// TODO: replace with variable colors
 ::selection {
   background-color: #6ab344;
   color: #fff;
 }
 
+// NOTE: for sticky footer
+.mdl-layout__content {
+  display: flex;
+  flex-direction: column;
+}
 
 // TODO: header here
 .demo-layout-transparent {
   background: url('../assets/demos/transparent.jpg') center / cover;
- }
-.demo-layout-transparent .mdl-layout__header,
-.demo-layout-transparent .mdl-layout__drawer-button {
-  /* This background is dark, so we set text to white. Use 87% black instead if
-     your background is light. */
-  color: black;
 }
 
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+  color: black;
+}
