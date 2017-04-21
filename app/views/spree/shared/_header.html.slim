@@ -23,6 +23,7 @@
             = link_to Spree.t(:logout), spree.logout_path, class: "mdl-navigation__link mdl-typography--text-uppercase"
         - else
             = link_to Spree.t(:login), spree.login_path, class: "mdl-navigation__link mdl-typography--text-uppercase"
+        = render "spree/shared/main_nav_bar"
 
     span.android-mobile-title.mdl-layout-title
       /img.android-logo-image src="images/android-logo.png" /
