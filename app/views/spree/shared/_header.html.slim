@@ -1,14 +1,9 @@
-/<header id="header" class="row" data-hook>
-/  I'm in header
-/  <figure id="logo" class="columns six" data-hook><%= logo %></figure>
-/  <%= render :partial => 'spree/shared/nav_bar' %>
-/  <%= render :partial => 'spree/shared/main_nav_bar' if store_menu? %>
-/</header>
-
 .android-header.mdl-layout__header.mdl-layout__header--waterfall
   .mdl-layout__header-row
     span.android-title.mdl-layout-title
-      /img.android-logo-image src="images/android-logo.png" /
+      /<figure id="logo" class="columns six" data-hook><%= logo %></figure>
+      /img.android-logo-image src=logo
+      = logo
     /! Add spacer, to align navigation to the right in desktop
     .android-header-spacer.mdl-layout-spacer
     .android-search-box.mdl-textfield.mdl-js-textfield.mdl-textfield--expandable.mdl-textfield--floating-label.mdl-textfield--align-right.mdl-textfield--full-width
