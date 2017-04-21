@@ -16,6 +16,8 @@ gem "sprockets", ">= 3.0.0"
 gem "uglifier"
 gem "turbolinks"
 
+gem "aws-sdk", "< 2.0"
+
 gem "solidus"
 gem "solidus_auth_devise"
 gem "solidus_i18n", github: "solidusio-contrib/solidus_i18n", branch: "master"
