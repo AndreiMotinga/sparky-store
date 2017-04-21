@@ -14,7 +14,6 @@ gem "recipient_interceptor"
 gem "sass-rails", "~> 5.0"
 gem "sprockets", ">= 3.0.0"
 gem "uglifier"
-gem "turbolinks"
 
 gem "aws-sdk", "< 2.0"
 

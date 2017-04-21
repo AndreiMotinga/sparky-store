@@ -419,9 +419,6 @@ GEM
     tilt (2.0.7)
     timecop (0.8.1)
     truncate_html (0.9.3)
-    turbolinks (5.0.1)
-      turbolinks-source (~> 5)
-    turbolinks-source (5.0.0)
     twitter_cldr (3.6.0)
       camertron-eprun
       cldr-plurals-runtime-rb (~> 1.0)
@@ -495,7 +492,6 @@ DEPENDENCIES
   spring-commands-rspec
   sprockets (>= 3.0.0)
   timecop
-  turbolinks
   uglifier
   web-console
   webmock
