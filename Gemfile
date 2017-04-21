@@ -23,6 +23,7 @@ gem "solidus_auth_devise"
 gem "solidus_i18n", github: "solidusio-contrib/solidus_i18n", branch: "master"
 
 gem "material_design_lite-rails", "~> 1.3"
+gem "material_icons"
 gem "slim-rails"
 
 group :development do
