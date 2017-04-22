@@ -12,21 +12,13 @@
       div[data-hook="promotions"]
         = render partial: "promotions"
 
-
-
-
-
-
-
-
-
-
     .mdl-cell.mdl-cell--8-col.mdl-cell--12-col-tablet style="border: thin solid red;"
-      #product-description[data-hook="product_description"]
-        h1.product-title[itemprop="name"]
-          = @product.name
-        div[itemprop="description" data-hook="description"]
+      #product-description.mdl-card.mdl-cell.mdl-cell--12-col.mdl-shadow--2dp[data-hook="product_description"]
+        .mdl-card__title
+          h1.mdl-card__title-text
+            = @product.name
+        div.mdl-card__supporting-text[itemprop="description" data-hook="description"]
           = product_description(@product) rescue Spree.t(:product_has_no_description)
-        #cart-form[data-hook="cart_form"]
-          = render :partial => 'cart_form'
-      = render :partial => 'taxons'
+        #cart-form.mdl-card__actions.mdl-card--border[data-hook="cart_form"]
+          = render partial: "cart_form"
+      /= render :partial => 'taxons'
