@@ -1,6 +1,6 @@
 - cache [I18n.locale, current_pricing_options, @product] do
-  .mdl-grid[data-hook="product_show" itemscope itemtype="http://schema.org/Product" style="border: thin solid black;"]
-    .mdl-cell.mdl-cell--4-col.mdl-cell--12-col-tablet style="border: thin solid red;"
+  .mdl-grid[data-hook="product_show" itemscope itemtype="http://schema.org/Product"]
+    .mdl-cell.mdl-cell--4-col.mdl-cell--12-col-tablet
       #product-images.mdl-card.mdl-cell.mdl-cell--12-col.mdl-shadow--2dp
         #main-image.mdl-typography--text-center
           = render partial: "image"
@@ -12,7 +12,7 @@
       div[data-hook="promotions"]
         = render partial: "promotions"
 
-    .mdl-cell.mdl-cell--8-col.mdl-cell--12-col-tablet style="border: thin solid red;"
+    .mdl-cell.mdl-cell--8-col.mdl-cell--12-col-tablet
       #product-description.mdl-card.mdl-cell.mdl-cell--12-col.mdl-shadow--2dp[data-hook="product_description"]
         .mdl-card__title
           h1.mdl-card__title-text

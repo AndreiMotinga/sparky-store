@@ -4,7 +4,7 @@
                                      itemscope=""
                                      itemtype="http://schema.org/Offer"]
     - if @product.variants_and_option_values_for(current_pricing_options).any?
-      #product-variants.mdl-cell.mdl-cell--6-col[style="border: thin solid green"]
+      #product-variants.mdl-cell.mdl-cell--6-col
         h6.product-section-title= Spree.t(:variants)
         ul.mdl-list
           - @product.variants_and_option_values_for(current_pricing_options).each_with_index do |variant, index|
@@ -24,7 +24,7 @@
       = hidden_field_tag "variant_id", @product.master.id
 
     - if @product.price_for(current_pricing_options) and !@product.price.nil?
-      .mdl-cell.mdl-cell--6-col[data-hook="product_price" style="border: thin solid green"]
+      .mdl-cell.mdl-cell--6-col data-hook="product_price"
         #product-price
           h6.product-section-title
             = Spree.t(:price)
