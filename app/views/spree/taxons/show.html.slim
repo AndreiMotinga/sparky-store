@@ -4,7 +4,8 @@
   /  = render partial: 'spree/shared/taxonomies'
   /  = render partial: 'spree/shared/filters' if @taxon.children.empty?
 = render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon }
+
 - unless params[:keywords].present?
-  div data-hook="taxon_children"
+  .mdl-grid data-hook="taxon_children"
     - cache [I18n.locale, @taxon] do
       = render partial: 'taxon', collection: @taxon.children
