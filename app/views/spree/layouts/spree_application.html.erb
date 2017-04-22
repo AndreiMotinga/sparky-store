@@ -18,7 +18,9 @@
           <div class="mdl-cell mdl-cell--12-col mdl-typography--text-center">
             <%= flash_messages %>
           </div>
-          <%= taxon_breadcrumbs(@taxon) %>
+          <div class="mdl-cell mdl-cell--12-col">
+            <%= taxon_breadcrumbs(@taxon) %>
+          </div>
           <%= yield %>
         </div>
       </div>
