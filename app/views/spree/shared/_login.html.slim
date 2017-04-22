@@ -1,0 +1,17 @@
+= form_for Spree::User.new, as: :spree_user, url: spree.create_new_session_path do |f|
+  #password-credentials
+    .mdl-textfield.mdl-js-textfield
+      = f.email_field :email, class: 'mdl-textfield__input', tabindex: 1, autofocus: true
+      = f.label :email, Spree.t(:email), class: "mdl-textfield__label"
+    br/
+    .mdl-textfield.mdl-js-textfield
+      = f.password_field :password, class: 'mdl-textfield__input', tabindex: 2
+      = f.label :password, Spree.t(:password), class: "mdl-textfield__label"
+      br/
+
+  p
+    label.mdl-switch.mdl-js-switch.mdl-js-ripple-effect for="spree_user_remember_me"
+      = f.check_box :remember_me, tabindex: 3, class: "mdl-switch__input", checked: true
+      span.mdl-switch__label= Spree.t(:remember_me)
+
+  p= f.submit Spree.t(:login), class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent", tabindex: 4
