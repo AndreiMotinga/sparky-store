@@ -1,9 +1,8 @@
 #checkout.mdl-cell.mdl-cell--12-col.red data-hook=""
   = render :partial => 'spree/shared/error_messages', :locals => { :target => @order }
-  .mdl-cell data-hook="checkout_header"
-    h3 data-hook="checkout_title" = Spree.t(:checkout)
-    .columns.thirteen.omega data-hook="checkout_progress" = checkout_progress
-  .mdl-cell data-hook="checkout_content"
+  h3.mdl-typography--text-center data-hook="checkout_title" = Spree.t(:checkout)
+  .columns.thirteen.omega data-hook="checkout_progress" = checkout_progress
+  .mdl-grid.black data-hook="checkout_content"
     div class=("mdl-cell #{@order.state != 'confirm' ? 'mdl-cell--8-col' : 'mdl-cell--12-col'}") data-hook="checkout_form_wrapper"
       = form_for @order, :url => update_checkout_path(@order.state), :html => { :id => "checkout_form_#{@order.state}" } do |form|
         - if @order.state == 'address' || !@order.email?
