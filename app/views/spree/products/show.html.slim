@@ -1,15 +1,26 @@
 - cache [I18n.locale, current_pricing_options, @product] do
   .mdl-grid[data-hook="product_show" itemscope itemtype="http://schema.org/Product" style="border: thin solid black;"]
     .mdl-cell.mdl-cell--4-col.mdl-cell--12-col-tablet style="border: thin solid red;"
-      #product-images[data-hook="product_images"]
-        #main-image[data-hook]
-          = render :partial => 'image'
-        #thumbnails[data-hook]
-          = render :partial => 'thumbnails'
+      #product-images.mdl-card.mdl-cell.mdl-cell--12-col.mdl-shadow--2dp
+        #main-image.mdl-typography--text-center
+          = render partial: "image"
+        .mdl-card__actions.mdl-card--border
+          #thumbnails.mdl-grid
+            = render partial: "thumbnails"
       div[data-hook="product_properties"]
-        = render :partial => 'properties'
+        = render partial: "properties"
       div[data-hook="promotions"]
-        = render :partial => 'promotions'
+        = render partial: "promotions"
+
+
+
+
+
+
+
+
+
+
     .mdl-cell.mdl-cell--8-col.mdl-cell--12-col-tablet style="border: thin solid red;"
       #product-description[data-hook="product_description"]
         h1.product-title[itemprop="name"]
