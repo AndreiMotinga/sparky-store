@@ -1,6 +1,6 @@
 - unless @product_properties.empty?
-  .mdl-card.mdl-cell.mdl-cell--12-col.mdl-shadow--2dp
-    table#product-properties.properties.mdl-data-table.mdl-js-data-table.mdl-data-table--selectable[data-hook]
+  .mdl-cell.mdl-cell--12-col
+    table#product-properties.properties.mdl-data-table.mdl-js-data-table.mdl-data-table--selectable.mdl-shadow--2dp[data-hook]
       tbody
         - @product_properties.each do |product_property|
           tr
