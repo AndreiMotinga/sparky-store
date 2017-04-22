@@ -1,0 +1,10 @@
+- unless @product_properties.empty?
+  .mdl-card.mdl-cell.mdl-cell--12-col.mdl-shadow--2dp
+    table#product-properties.properties.mdl-data-table.mdl-js-data-table.mdl-data-table--selectable[data-hook]
+      tbody
+        - @product_properties.each do |product_property|
+          tr
+            td.mdl-data-table__cell--non-numeric
+              = product_property.property.presentation
+            td.mdl-data-table__cell--non-numeric
+              = product_property.value
