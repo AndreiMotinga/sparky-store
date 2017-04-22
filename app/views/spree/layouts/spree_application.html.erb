@@ -15,7 +15,9 @@
     <div class="android-content mdl-layout__content mdl-color--grey-100">
       <div>
         <div class="mdl-grid">
-          <%= flash_messages %>
+          <div class="mdl-cell mdl-cell--12-col mdl-typography--text-center">
+            <%= flash_messages %>
+          </div>
           <%= taxon_breadcrumbs(@taxon) %>
           <%= yield %>
         </div>
