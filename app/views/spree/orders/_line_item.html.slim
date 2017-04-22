@@ -1,7 +1,7 @@
 - variant = line_item.variant
 = order_form.fields_for :line_items, line_item do |item_form|
   tr class="#{cycle('', 'alt')} line-item"
-    td.cart-item-image data-hook="cart_item_image"
+    td.mdl-data-table__cell--non-numeric.cart-item-image data-hook="cart_item_image"
       - if variant.images.length == 0
         = link_to image_tag(variant.product.display_image.attachment(:small)), variant.product
       - else
@@ -12,7 +12,6 @@
       - if line_item.insufficient_stock?
         span.out-of-stock
           = Spree.t(:out_of_stock)
-          |   
           br/
       span.line-item-description data-hook="line_item_description"
         = line_item_description_text(line_item.description)
@@ -24,4 +23,3 @@
       = line_item.display_amount.to_html unless line_item.quantity.nil?
     td.cart-item-delete data-hook="cart_item_delete"
       = link_to image_tag('icons/delete.png'), '#', :class => 'delete', :id => "delete_#{dom_id(line_item)}"
-
