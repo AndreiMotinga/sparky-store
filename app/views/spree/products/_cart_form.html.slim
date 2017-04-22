@@ -26,10 +26,12 @@
     - if @product.price_for(current_pricing_options) and !@product.price.nil?
       .mdl-cell.mdl-cell--6-col[data-hook="product_price" style="border: thin solid green"]
         #product-price
-          h6.product-section-title = Spree.t(:price)
-          div
+          h6.product-section-title
+            = Spree.t(:price)
+            = " "
             span.price.selling[itemprop="price"]
               = display_price(@product)
+          div
             span itemprop="priceCurrency" content=current_pricing_options.currency
           - if @product.master.can_supply?
             link[itemprop="availability" href="http://schema.org/InStock"]
@@ -38,8 +40,11 @@
             span.out-of-stock= Spree.t(:out_of_stock)
 
         .add-to-cart
-          = number_field_tag :quantity, 1, class: 'title', min: 1
-          = button_tag class: 'large primary', id: 'add-to-cart-button', type: :submit do
+          .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+            = number_field_tag :quantity, 1, class: "mdl-textfield__input", min: 1
+            label class="mdl-textfield__label"
+          = button_tag id: 'add-to-cart-button', type: :submit,
+                       class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent' do
             = Spree.t(:add_to_cart)
     - else
       #product-price
