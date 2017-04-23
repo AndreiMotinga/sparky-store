@@ -1,5 +1,6 @@
-.android-drawer {
-  border-right: none;
+.android-drawer .mdl-layout-title {
+  margin-top: 10px;
+  margin-bottom: -10px;
 }
 
 .android-drawer-separator {
@@ -8,16 +9,7 @@
   margin: 8px 0;
 }
 
-.android-drawer .mdl-navigation__link.mdl-navigation__link {
-  font-size: 14px;
-  color: #757575;
-}
-
-.android-drawer span.mdl-navigation__link.mdl-navigation__link {
-  color: #8bc34a;
-}
-
-.android-drawer .mdl-layout-title {
-  position: relative;
-  height: 80px;
+.android-drawer .taxonomy-root {
+  text-transform: uppercase;
+  padding: 0 30px;
 }

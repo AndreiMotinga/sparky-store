@@ -6,6 +6,6 @@
     - Spree::Taxonomy.includes(root: :children).each do |taxonomy|
       - cache [I18n.locale, taxonomy, max_level] do
         .android-drawer-separator
-        h6.taxonomy-root= Spree.t(:shop_by_taxonomy, taxonomy: taxonomy.name)
+        h6.taxonomy-root
+          = Spree.t(:shop_by_taxonomy, taxonomy: taxonomy.name)
         = taxons_tree(taxonomy.root, @taxon, max_level)
-    a.mdl-navigation__link href=""  Phones
