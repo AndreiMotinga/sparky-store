@@ -9,11 +9,11 @@ a img{
 
 // TODO: replace with variable colors
 ::selection {
-  background-color: #6ab344;
-  color: #fff;
+  background-color: $action-color;
+  color: $white;
 }
 
-// TODO NOTE: for sticky footer
+// NOTE: for sticky footer
 .mdl-layout__content {
   display: flex;
   flex-direction: column;
@@ -26,5 +26,5 @@ a img{
 
 .demo-layout-transparent .mdl-layout__header,
 .demo-layout-transparent .mdl-layout__drawer-button {
-  color: black;
+  color: $black;
 }
