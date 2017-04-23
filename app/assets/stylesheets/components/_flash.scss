@@ -1,15 +1,17 @@
 // TODO: change colors
 .flash {
   margin: 0 auto;
-  color: white;
+  color: $white;
   padding: $base-spacing;
   border-radius: $base-border-radius;
 }
 
 .flash.error {
-  background-color: red;
+  border: 1px solid $red;
+  color: $red;
 }
 
 .flash.success {
-  background-color: #8BC34A;
+  border: 1px solid $green;
+  color: $green;
 }
