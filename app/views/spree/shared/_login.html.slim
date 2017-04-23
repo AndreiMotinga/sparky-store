@@ -14,4 +14,5 @@
       = f.check_box :remember_me, tabindex: 3, class: "mdl-switch__input", checked: true
       span.mdl-switch__label= Spree.t(:remember_me)
 
-  p= f.submit Spree.t(:login), class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent", tabindex: 4
+  p.mdl-typography--text-center
+    = f.submit Spree.t(:login), class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent", tabindex: 4
