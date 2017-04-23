@@ -1,5 +1,5 @@
 <fieldset id="payment" data-hook>
-  <legend align="center"><%= Spree.t(:payment_information) %></legend>
+  <h5><%= Spree.t(:payment_information) %></h5>
   <div data-hook="checkout_payment_step">
     <% if @payment_sources.present? %>
       <div class="card_options">
@@ -39,31 +39,39 @@
       <% @order.available_payment_methods.each do |method| %>
       <p>
         <label>
-          <%= radio_button_tag "order[payments_attributes][][payment_method_id]", method.id, method == @order.available_payment_methods.first %>
-          <%= Spree.t(method.name, :scope => :payment_methods, :default => method.name) %>
+          <%= radio_button_tag "order[payments_attributes][][payment_method_id]",
+                               method.id,
+                               method == @order.available_payment_methods.first %>
+          <%= Spree.t(method.name, scope: :payment_methods, default: method.name) %>
         </label>
       </p>
       <% end %>
     </div>
 
-    <ul id="payment-methods" data-hook>
+    <ul id="payment-methods" class="mdl-list" data-hook>
       <% @order.available_payment_methods.each do |method| %>
-        <li id="payment_method_<%= method.id %>" class="<%= 'last' if method == @order.available_payment_methods.last %>" data-hook>
+        <li id="payment_method_<%= method.id %>"
+            class="<%= 'last' if method == @order.available_payment_methods.last %>" data-hook>
           <fieldset>
-            <%= render :partial => "spree/checkout/payment/#{method.method_type}", :locals => { :payment_method => method } %>
+            <%= render partial: "spree/checkout/payment/#{method.method_type}",
+                       locals: { payment_method: method } %>
           </fieldset>
         </li>
       <% end %>
     </ul>
-    <br style="clear:both;" />
-    <p class='field' data-hook='coupon_code'>
-      <%= form.label :coupon_code %><br />
-      <%= form.text_field :coupon_code %>
-      <button type="button" class="button" id="coupon-code-apply-button">
-        <%= Spree.t(:apply_code) %>
-      </button>
 
+    <br style="clear:both;" />
+
+    <p class='mdl-textfield mdl-js-textfield' data-hook='coupon_code'>
+      <%= form.label :coupon_code, class: "mdl-textfield__label" %>
+      <%= form.text_field :coupon_code, class: "mdl-textfield__input" %>
     </p>
+    <button type="button"
+            class="mdl-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+            id="coupon-code-apply-button">
+      <%= Spree.t(:apply_code) %>
+    </button>
+
     <div id='coupon_status'></div>
 
   </div>
@@ -72,6 +80,7 @@
 <br class="space" />
 
 <div class="form-buttons" data-hook="buttons">
-  <%= submit_tag Spree.t(:save_and_continue), :class => 'continue button primary' %>
+  <%= submit_tag Spree.t(:save_and_continue),
+                 class: "mdl-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" %>
   <script>Spree.disableSaveOnClick();</script>
 </div>

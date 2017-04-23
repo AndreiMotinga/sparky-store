@@ -1,10 +1,10 @@
 = form_for Spree::User.new, as: :spree_user, url: spree.create_new_session_path do |f|
   #password-credentials
-    .mdl-textfield.mdl-js-textfield
+    .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
       = f.email_field :email, class: 'mdl-textfield__input', tabindex: 1, autofocus: true
       = f.label :email, Spree.t(:email), class: "mdl-textfield__label"
     br/
-    .mdl-textfield.mdl-js-textfield
+    .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
       = f.password_field :password, class: 'mdl-textfield__input', tabindex: 2
       = f.label :password, Spree.t(:password), class: "mdl-textfield__label"
       br/
