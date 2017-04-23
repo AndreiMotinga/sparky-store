@@ -1,49 +1,40 @@
-fieldset#shipping_method data-hook=""
-  /legend align="center" = Spree.t(:delivery)
-  .inner data-hook="shipping_method_inner"
-    #methods
-      = form.fields_for :shipments do |ship_form|
-        .shipment
-          /h3.stock-location data-hook="stock-location"
-            /= Spree.t(:package_from)
-            /= " "
-            /strong.stock-location-name data-hook="stock-location-name" = ship_form.object.stock_location.name
-          table.mdl-data-table.mdl-js-data-table.mdl-shadow--2dp data-hook="stock-contents"
-            colgroup
-              col style=("width: 10%;") /
-              col style=("width: 60%;") /
-              col style=("width: 10%;") /
-              col style=("width: 20%;") /
-            thead
-              th
-              th align="left" = Spree.t(:item)
-              th= Spree.t(:qty)
-              th= Spree.t(:price)
-            tbody
-              - ship_form.object.manifest.each do |item|
-                tr.stock-item
-                  td.mdl-data-table__cell--non-numeric= image_tag item.variant.display_image.attachment(:mini)
-                  td.mdl-data-table__cell--non-numeric.item-name= item.variant.name
-                  td.item-qty= item.quantity
-                  td.item-price= display_price(item.variant)
-          /h5.stock-shipping-method-title= Spree.t(:shipping_method)
-          ul.field.radios.shipping-methods
+.inner data-hook="shipping_method_inner"
+  #methods
+    = form.fields_for :shipments do |ship_form|
+      .table-responsive
+        table.full-width.cart-detail.mdl-data-table.mdl-js-data-table.mdl-shadow--2dp
+          thead
+            th
+            th align="left" = Spree.t(:item)
+            th= Spree.t(:qty)
+            th= Spree.t(:price)
+          tbody
+            - ship_form.object.manifest.each do |item|
+              tr
+                td.mdl-data-table__cell--non-numeric= image_tag item.variant.display_image.attachment(:mini)
+                td.mdl-data-table__cell--non-numeric.item-name= item.variant.name
+                td.item-qty= item.quantity
+                td.item-price= display_price(item.variant)
+
+      br
+      .mdl-card.full-width.mdl-shadow--2dp
+        .mdl-card__title
+          h3.mdl-card__title-text= Spree.t(:shipping_method)
+        .mdl-card__supporting-text
+          ul.mdl-list
             - ship_form.object.shipping_rates.each do |rate|
               li.shipping-method
-                label
-                  = ship_form.radio_button :selected_shipping_rate_id, rate.id
+                label class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+                  = ship_form.radio_button :selected_shipping_rate_id, rate.id, class: "mdl-radio__button"
                   span.rate-name= rate.name
                   span.rate-cost= rate.display_cost
-      - if @differentiator.try(:missing?)
-        .shipment.unshippable
-          h3.stock-location data-hook="stock-location"
-            = Spree.t(:unshippable_items)
-          table.mdl-data-table.mdl-js-data-table.mdl-shadow--2dp.stock-contents data-hook="stock-missing"
-            colgroup
-              col style=("width: 10%;") /
-              col style=("width: 60%;") /
-              col style=("width: 10%;") /
-              col style=("width: 20%;") /
+
+    - if @differentiator.try(:missing?)
+      .shipment.unshippable
+        h3.stock-location data-hook="stock-location"
+          = Spree.t(:unshippable_items)
+        .table-responsive
+          table.full-width.mdl-data-table.mdl-js-data-table.mdl-shadow--2dp.stock-contents data-hook="stock-missing"
             thead
               th
               th align="left" = Spree.t(:item)
@@ -52,15 +43,17 @@ fieldset#shipping_method data-hook=""
             tbody
               - @differentiator.missing.each do |variant, quantity|
                 tr.stock-item
-                  td.mdl-data-table__cell--non-numeric.item-image= image_tag variant.display_image.attachment(:mini)
+                  td.mdl-data-table__cell--non-numeric.item-image
+                    = image_tag variant.display_image.attachment(:mini)
                   td.mdl-data-table__cell--non-numeric.item-name= variant.name
                   td.item-qty= quantity
                   td.item-price= display_price(variant)
-    - if Spree::Config[:shipping_instructions]
-      p#minstrs data-hook=""
-        = form.label :special_instructions, Spree.t(:shipping_instructions)
-        br/
-        = form.text_area :special_instructions, :cols => 40, :rows => 7
+  - if Spree::Config[:shipping_instructions]
+    p#minstrs data-hook=""
+      = form.label :special_instructions, Spree.t(:shipping_instructions)
+      br/
+      = form.text_area :special_instructions, cols: 40, rows: 7
 br/
-.form-buttons data-hook="buttons"
-  = submit_tag Spree.t(:save_and_continue), :class => 'continue button primary'
+
+= submit_tag Spree.t(:save_and_continue),
+             class: "mdl-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
