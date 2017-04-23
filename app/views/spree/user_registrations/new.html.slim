@@ -1,0 +1,9 @@
+= render 'spree/shared/error_messages', target: resource
+.session-form.mdl-card.mdl-shadow--2dp
+  h6.mdl-typography--text-center= Spree.t(:new_customer)
+  = form_for resource, as: :spree_user, url: spree.registration_path(resource) do |f|
+    = render partial: 'spree/shared/user_form', locals: { f: f }
+    p= f.submit Spree.t(:create),
+               class: "mdl-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent", tabindex: 4
+  p
+    = link_to Spree.t(:login_as_existing), spree.login_path

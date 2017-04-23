@@ -1,0 +1,12 @@
+.mdl-textfield.mdl-js-textfield
+  = f.email_field :email, class: 'mdl-textfield__input', autofocus: true
+  = f.label :email, Spree.t(:email), class: "mdl-textfield__label"
+br/
+.mdl-textfield.mdl-js-textfield
+  = f.password_field :password, class: 'mdl-textfield__input'
+  = f.label :password, Spree.t(:password), class: "mdl-textfield__label"
+br/
+.mdl-textfield.mdl-js-textfield
+  = f.password_field :password_confirmation, class: 'mdl-textfield__input'
+  = f.label :password_confirmation, Spree.t(:password_confirmation), class: "mdl-textfield__label"
+br/
