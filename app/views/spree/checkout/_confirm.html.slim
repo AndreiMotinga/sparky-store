@@ -4,6 +4,7 @@ fieldset#order_details data-hook=""
   = render :partial => 'spree/shared/order_details', :locals => { :order => @order }
 br/
 .form-buttons data-hook="buttons"
-  = submit_tag Spree.t(:place_order), :class => 'continue button primary'
+  = submit_tag Spree.t(:place_order),
+               class: "mdl-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
   javascript:
     | Spree.disableSaveOnClick();

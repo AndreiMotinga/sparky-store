@@ -4,7 +4,7 @@
   h4.mdl-typography--text-center data-hook="checkout_title" = Spree.t(:checkout)
   = checkout_progress
 
-  .mdl-grid.black data-hook="checkout_content"
+  .mdl-grid data-hook="checkout_content"
     - classes=  @order.state != "confirm" ? "mdl-cell--8-col" : "mdl-cell--12-col"
     div class="mdl-cell #{classes}"
       = form_for @order,
