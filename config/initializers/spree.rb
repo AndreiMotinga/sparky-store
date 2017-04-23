@@ -56,6 +56,7 @@ Spree::Frontend::Config.configure do |config|
   config.use_static_preferences!
 
   config.locale = :ru
+  config.allow_guest_checkout = false
 end
 
 Spree::Backend::Config.configure do |config|
