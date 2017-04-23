@@ -3,7 +3,9 @@
     margin: 0 auto;
   }
 
-  .mdl-button {
-    margin-left: $small-spacing;
+  .links {
+    .mdl-button {
+      margin-left: $small-spacing;
+    }
   }
 }

@@ -17,11 +17,19 @@
         a.mdl-navigation__link.mdl-typography--text-uppercase href=""  Delivery
         a.mdl-navigation__link.mdl-typography--text-uppercase href=""  Catalogs
         - if spree_current_user
-            = link_to Spree.t(:my_account), spree.account_path, class: "mdl-navigation__link mdl-typography--text-uppercase"
-            = link_to Spree.t(:logout), spree.logout_path, class: "mdl-navigation__link mdl-typography--text-uppercase"
+          = link_to Spree.t(:my_account),
+                    spree.account_path,
+                    class: "mdl-navigation__link mdl-typography--text-uppercase"
+            = link_to Spree.t(:logout),
+                      spree.logout_path,
+                      class: "mdl-navigation__link mdl-typography--text-uppercase"
         - else
-            = link_to Spree.t(:login), spree.login_path, class: "mdl-navigation__link mdl-typography--text-uppercase"
-        = render "spree/shared/main_nav_bar"
+          = link_to Spree.t(:login),
+                    spree.login_path,
+                    class: "mdl-navigation__link mdl-typography--text-uppercase"
+        span id="link-to-cart" data-hook=""
+        javascript:
+          Spree.fetch_cart("#{j spree.cart_link_url}")
 
     span.android-mobile-title.mdl-layout-title
       = logo
