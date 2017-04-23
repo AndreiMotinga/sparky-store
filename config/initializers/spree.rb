@@ -8,6 +8,9 @@ Spree.config do |config|
   # This line resets all preferences! It should be the first line in the block
   config.use_static_preferences!
 
+  config.allow_guest_checkout = false
+  config.address_requires_state = false
+
   # Core:
 
   # Default currency for new sites
@@ -56,7 +59,6 @@ Spree::Frontend::Config.configure do |config|
   config.use_static_preferences!
 
   config.locale = :ru
-  config.allow_guest_checkout = false
 end
 
 Spree::Backend::Config.configure do |config|
