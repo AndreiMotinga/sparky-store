@@ -12,7 +12,7 @@
                  html: { id: "checkout_form_#{@order.state}" } do |form|
 
         - if @order.state == 'address' || !@order.email?
-          .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+          .mdl-cell.mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
             = form.text_field :email, class: "mdl-textfield__input"
             = form.label :email, class: "mdl-textfield__label"
         = render @order.state, form: form

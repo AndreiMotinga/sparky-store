@@ -1,21 +1,26 @@
 .mdl-grid
-  .mdl-cell.mdl-cell--6-col.black data-hook="billing_fieldset_wrapper"
+  .mdl-cell.mdl-cell--6-col data-hook="billing_fieldset_wrapper"
     = form.fields_for :bill_address do |bill_form|
       h6= Spree.t(:billing_address)
-      = render partial: 'spree/address/form', locals: { form: bill_form, address_type: 'billing', address: @order.bill_address }
-  .mdl-cell.mdl-cell--6-col.black data-hook="shipping_fieldset_wrapper"
+      = render partial: 'spree/address/form',
+               locals: { form: bill_form, address_type: 'billing', address: @order.bill_address }
+  .mdl-cell.mdl-cell--6-col data-hook="shipping_fieldset_wrapper"
     fieldset#shipping data-hook=""
       = form.fields_for :ship_address do |ship_form|
         h6= Spree.t(:shipping_address)
-        p.field.checkbox data-hook="use_billing"
-          = check_box_tag 'order[use_billing]', '1', @order.shipping_eq_billing_address?
-          = label_tag :order_use_billing, Spree.t(:use_billing_address), id: 'use_billing'
-        = render partial: 'spree/address/form', locals: { form: ship_form, address_type: 'shipping', address: @order.ship_address }
+        label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="order_use_billing"
+          = check_box_tag 'order[use_billing]', '1', @order.shipping_eq_billing_address?, class: "mdl-switch__input"
+          span class="mdl-switch__label" = Spree.t(:use_billing_address)
+        = render partial: 'spree/address/form',
+                 locals: { form: ship_form, address_type: 'shipping', address: @order.ship_address }
+
 hr.clear/
-.form-buttons data-hook="buttons"
-  = submit_tag Spree.t(:save_and_continue), class: 'continue button primary'
-  - if try_spree_current_user
-    span data-hook="save_user_address"
-      = check_box_tag 'save_user_address', '1', try_spree_current_user.respond_to?(:persist_order_address)
-      = " "
-      = label_tag :save_user_address, Spree.t(:save_my_address)
+- if try_spree_current_user
+  span data-hook="save_user_address"
+    label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="save_user_address"
+      = check_box_tag 'save_user_address', '1', try_spree_current_user.respond_to?(:persist_order_address), class: "mdl-switch__input"
+      span class="mdl-switch__label" = Spree.t(:save_my_address)
+  br
+  br
+= submit_tag Spree.t(:save_and_continue),
+             class: "mdl-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
