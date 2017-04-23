@@ -1,26 +1,29 @@
 #checkout.mdl-cell.mdl-cell--12-col
   = render partial: 'spree/shared/error_messages', locals: { target: @order }
+
   h4.mdl-typography--text-center data-hook="checkout_title" = Spree.t(:checkout)
   = checkout_progress
+
   .mdl-grid.black data-hook="checkout_content"
-    - classes =  @order.state != "confirm" ? "mdl-cell--8-col" : "mdl-cell--12-col"
-    div class=("mdl-cell #{classes}")
+    - classes=  @order.state != "confirm" ? "mdl-cell--8-col" : "mdl-cell--12-col"
+    div class="mdl-cell #{classes}"
       = form_for @order,
                  url: update_checkout_path(@order.state),
                  html: { id: "checkout_form_#{@order.state}" } do |form|
+
         - if @order.state == 'address' || !@order.email?
-          p.field style=("clear: both")
-            = form.label :email
-            br/
-            = form.text_field :email
-        = render @order.state, :form => form
-    - if @order.state != 'confirm'
-      #checkout-summary.mdl-cell.mdl-cell--4-col data-hook="checkout_summary_box"
-        = render :partial => 'summary', :locals => { :order => @order }
+          .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+            = form.text_field :email, class: "mdl-textfield__input"
+            = form.label :email, class: "mdl-textfield__label"
+        = render @order.state, form: form
+
+    - if @order.state != "confirm"
+      .mdl-cell.mdl-cell--4-col
+        = render partial: 'summary', locals: { order: @order }
 
 javascript:
-  | Spree.current_order_id = "#{@order.number}"
-  | Spree.current_order_token = "#{@order.guest_token}"
+  Spree.current_order_id = #{@order.number}
+  Spree.current_order_token = #{@order.guest_token}
 
 - if I18n.locale != :en
   = javascript_include_tag 'jquery.validate/localization/messages_' + I18n.locale.to_s.downcase.gsub('-', '')
