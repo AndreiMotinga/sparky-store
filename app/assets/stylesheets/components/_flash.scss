@@ -11,12 +11,7 @@
   color: $red;
 }
 
-.flash.success {
+.flash.success, .flash.notice {
   border: 1px solid $green;
   color: $green;
-}
-
-.flash.notice {
-  background-color: $action-color;
-  color: $white;
 }

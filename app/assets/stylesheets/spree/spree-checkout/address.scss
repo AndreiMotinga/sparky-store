@@ -1,0 +1,10 @@
+.spree-checkout {
+  .progress-steps {
+    display: flex;
+    justify-content: space-around;
+
+    li {
+      border: $base-border;
+    }
+  }
+}
