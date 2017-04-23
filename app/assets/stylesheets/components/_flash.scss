@@ -6,7 +6,7 @@
   border-radius: $base-border-radius;
 }
 
-.flash.error {
+.flash.error, .flash.registration_error {
   border: 1px solid $red;
   color: $red;
 }
