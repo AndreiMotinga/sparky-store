@@ -1,0 +1,14 @@
+#breadcrumbs {
+  ol {
+    list-style-type: none;
+
+    li {
+      display: inline;
+      text-transform: uppercase;
+
+      a {
+        font-weight: 600;
+      }
+    }
+  }
+}
