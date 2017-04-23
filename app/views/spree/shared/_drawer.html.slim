@@ -1,6 +1,6 @@
 .android-drawer.mdl-layout__drawer
   span.mdl-layout-title
-    = logo "android-logo-image"
+    = logo
   nav#taxonomies.sidebar-item.mdl-navigation data-hook=""
     - max_level = Spree::Config[:max_level_in_taxons_menu] || 3
     - Spree::Taxonomy.includes(root: :children).each do |taxonomy|
