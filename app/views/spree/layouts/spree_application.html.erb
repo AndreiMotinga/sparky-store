@@ -16,10 +16,10 @@
       <div>
         <div class="mdl-grid">
           <div class="mdl-cell mdl-cell--12-col mdl-typography--text-center">
-            <%= flash_messages %>
+            <%= flash_messages if defined? flash_messages %>
           </div>
           <div class="mdl-cell mdl-cell--12-col">
-            <%= taxon_breadcrumbs(@taxon) %>
+            <%= taxon_breadcrumbs(@taxon) if defined?(taxon_breadcrumbs) %>
           </div>
           <%= yield %>
         </div>
