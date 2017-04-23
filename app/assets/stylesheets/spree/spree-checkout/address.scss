@@ -4,7 +4,10 @@
     justify-content: space-around;
 
     li {
-      border: $base-border;
+      padding: 0 5px;
+    }
+    li.current, li.current-first {
+      border-bottom: 4px solid $action-color;
     }
   }
 }
