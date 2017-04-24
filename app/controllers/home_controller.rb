@@ -3,13 +3,4 @@ class HomeController < ApplicationController
 
   def about
   end
-
-  def contacts
-  end
-
-  def delivery
-  end
-
-  def catalogs
-  end
 end
