@@ -4,9 +4,7 @@
       #product-images.mdl-card.mdl-cell.mdl-cell--12-col.mdl-shadow--2dp
         #main-image.mdl-typography--text-center
           = render partial: "image"
-        .mdl-card__actions.mdl-card--border
-          #thumbnails.mdl-grid
-            = render partial: "thumbnails"
+        = render partial: "thumbnails"
       div[data-hook="product_properties"]
         = render partial: "properties"
       div[data-hook="promotions"]
