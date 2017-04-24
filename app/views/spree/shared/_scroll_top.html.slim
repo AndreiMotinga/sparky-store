@@ -1,0 +1,17 @@
+a#scrollUp.scroll-up.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-button--accent.mdl-cell--hide-phone href="#top"
+  i.material-icons add
+
+javascript:
+  $('.mdl-layout__content').scroll(function() {
+    var link = $('#scrollUp');
+    if ($(this).scrollTop() > 1000) {
+      link.fadeIn(100);
+    } else {
+      link.fadeOut(100);
+    }
+  });
+
+  $(document).on("click","#scrollUp", function(e){
+    $('.mdl-layout__content').animate({scrollTop:0}, 200);
+    return false;
+  });
