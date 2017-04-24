@@ -1,9 +1,21 @@
 - content_for :ribbon do
   h3 Hey there
   p
-    | Cillum dolor esse sit incididunt velit eiusmod magna ad nostrud officia aute dolor dolor. Magna esse ullamco pariatur adipisicing consectetur eu commodo officia. Ex cillum consequat mollit minim elit est deserunt occaecat nisi amet. Quis aliqua nostrud Lorem occaecat sunt. Eiusmod quis amet ullamco aliquip dolore ut incididunt duis adipisicing. Elit consequat nisi eiusmod aute ipsum sunt veniam do est. Occaecat mollit aliquip ut proident consectetur amet ex dolore consectetur aliqua elit.
-  h3 Howdy...
-  p
-    | Cillum dolor esse sit incididunt velit eiusmod magna ad nostrud officia aute dolor dolor. Magna esse ullamco pariatur adipisicing consectetur eu commodo officia. Ex cillum consequat mollit minim elit est deserunt occaecat nisi amet. Quis aliqua nostrud Lorem occaecat sunt. Eiusmod quis amet ullamco aliquip dolore ut incididunt duis adipisicing. Elit consequat nisi eiusmod aute ipsum sunt veniam do est. Occaecat mollit aliquip ut proident consectetur amet ex dolore consectetur aliqua elit.
+    | Hi there. This website is a demo of #{link_to "Solidus e-commerce.", "//solidus.io", target: "_blank"}
+    br
+    | #{link_to "Material Design Lite", "getmdl.io/", target: "_blank" } was used on frontend to style pages.
+    br
+    | You can log in to #{link_to "admin panel", "/admin/login", target: "_blank"} with
+    br
+    .mdl-cell.mdl-color--grey-100
+      code
+        | login: admin@example.com
+        br
+        | password: test123
+    br
+    br
+    | Feel free to click around and explore the platform.
+    br
+    = link_to "Source code for this app is here", "https://github.com/AndreiMotinga/store", target: "_blank"
 
 = render "home/ribbon"
