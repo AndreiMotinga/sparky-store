@@ -21,4 +21,4 @@
           = product_description(@product) rescue Spree.t(:product_has_no_description)
         #cart-form.mdl-card__actions.mdl-card--border[data-hook="cart_form"]
           = render partial: "cart_form"
-      /= render :partial => 'taxons'
+      /= render "taxons"
