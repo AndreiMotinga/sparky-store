@@ -25,7 +25,7 @@
         = truncate(product.description, length: 100)
       .mdl-card__actions.mdl-card--border.mdl-typography--text-center
         = link_to url,
-                  class: "mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect",
+                  class: "mdl-button mdl-js-button mdl-js-ripple-effect",
                   itemprop: "name", title: product.name do
           = truncate(product.name, length: 50)
           = " "
