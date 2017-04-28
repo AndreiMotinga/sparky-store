@@ -2,21 +2,14 @@
 # See http://docs.solidus.io/Spree/AppConfiguration.html for details
 
 Spree.config do |config|
-  # Without this preferences are loaded and persisted to the database. This
-  # changes them to be stored in memory.
-  # This will be the default in a future version.
-  # This line resets all preferences! It should be the first line in the block
   config.use_static_preferences!
-
   config.allow_guest_checkout = false
   config.address_requires_state = false
-  # TODO: fix sparky price
-  config.show_products_without_price = true
 
   # Core:
 
   # Default currency for new sites
-  # config.currency = "USD"
+  config.currency = "MDL"
 
   # from address for transactional emails
   # config.mails_from = "store@example.com"
@@ -28,7 +21,6 @@ Spree.config do |config|
   # above the inventory_cache_threshold that is set. Default is to invalidate cache on
   # any inventory changes.
   # config.inventory_cache_threshold = 3
-
 
   # Frontend:
 
@@ -59,22 +51,18 @@ end
 
 Spree::Frontend::Config.configure do |config|
   config.use_static_preferences!
-
-  config.locale = :en
+  config.locale = :ru
 end
 
 Spree::Backend::Config.configure do |config|
   config.use_static_preferences!
-
   config.locale = :en
 end
 
 Spree::Api::Config.configure do |config|
   config.use_static_preferences!
-
   config.requires_authentication = true
 end
 
 Spree.user_class = "Spree::LegacyUser"
-
-SolidusI18n::Config.available_locales = [:ru, :ro, :en] # displayed on frontend select box
+SolidusI18n::Config.available_locales = [:ru, :ro, :en]
