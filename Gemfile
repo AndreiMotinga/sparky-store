@@ -17,7 +17,7 @@ gem "uglifier"
 
 gem "aws-sdk"
 
-gem 'solidus', '~> 2.2.0.rc1'
+gem 'solidus', github: 'solidusio/solidus'
 gem "solidus_auth_devise"
 gem "solidus_i18n", github: "solidusio-contrib/solidus_i18n", branch: "master"
 

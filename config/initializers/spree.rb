@@ -10,6 +10,8 @@ Spree.config do |config|
 
   config.allow_guest_checkout = false
   config.address_requires_state = false
+  # TODO: fix sparky price
+  config.show_products_without_price = true
 
   # Core:
 

@@ -30,7 +30,8 @@
           = truncate(product.name, length: 50)
           = " "
           span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer"
-            span itemprop="price" = display_price(product)
+            / TODO: FIX sparky price
+            span itemprop="price" = display_price(product) if product.price
 
 
 - if paginated_products.respond_to?(:total_pages)
