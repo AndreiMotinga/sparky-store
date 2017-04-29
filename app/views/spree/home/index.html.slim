@@ -2,5 +2,21 @@
 /  div data-hook="homepage_sidebar_navigation"
 /    = render partial: "spree/shared/taxonomies"
 
-- cache(cache_key_for_products) do
-  = render partial: "spree/shared/products", locals: { products: @products }
+/- cache(cache_key_for_products) do
+/  = render partial: "spree/shared/products", locals: { products: @products }
+
+- content_for :banner do
+  .banner
+    h1.moto Power in your hands
+    .tels
+      h5
+        | (929) 293 5385
+      h5
+        | (929) 293 5386
+
+
+div
+  - max_level = Spree::Config[:max_level_in_taxons_menu] || 3
+  - Spree::Taxonomy.includes(root: :children).each do |taxonomy|
+    - cache [I18n.locale, taxonomy, max_level] do
+      = taxons_tree(taxonomy.root, @taxon, max_level)

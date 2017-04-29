@@ -1,0 +1,33 @@
+.banner {
+  background: image-url("sparky/cover.jpg") center / cover;
+  min-height: 320px;
+  position: relative;
+
+  .moto,
+  .tels {
+    position: absolute;
+    color: $white;
+  }
+
+  .moto {
+    left: 10px;
+    bottom: 10px;
+    font-size: 75px;
+    margin: 0;
+  }
+
+  .tels {
+    top: 20px;
+    right: 20px;
+
+    h5 {
+      margin: 5px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .banner {
+    display: none;
+  }
+}
