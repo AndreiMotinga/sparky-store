@@ -1,32 +1,30 @@
 .banner {
-  background: image-url("sparky/cover.jpg") center / cover;
-  min-height: 320px;
-  position: relative;
+  margin-top: $base-spacing;
+  max-width: 1200px;
+  background: linear-gradient(30deg, red, black);
+
+  .content {
+    max-width: 900px;
+    padding: 0;
+  }
 
   .moto,
-  .tels {
-    position: absolute;
+  .tel {
+    float: right;
+    clear: right;
     color: $white;
   }
 
   .moto {
-    left: 10px;
-    bottom: 10px;
-    font-size: 75px;
     margin: 0;
   }
 
-  .tels {
-    top: 20px;
-    right: 20px;
-
-    h5 {
-      margin: 5px;
-    }
+  .tel {
+    margin: 0;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 840px) {
   .banner {
     display: none;
   }
