@@ -14,13 +14,13 @@
 @import "spree/products/show";
 @import "spree/spree-checkout/address";
 
+@import "components/breadcrumbs";
 @import "components/drawer";
 @import "components/header";
-@import "components/breadcrumbs";
 @import "components/flash";
-@import "components/session-form";
-@import "components/scroll-up";
-
 @import "components/product";
+@import "components/pagination";
+@import "components/scroll-up";
+@import "components/session-form";
 
 @import "home/home";

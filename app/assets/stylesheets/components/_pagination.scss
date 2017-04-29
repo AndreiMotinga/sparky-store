@@ -1,0 +1,22 @@
+.pagination {
+  margin: ($base-spacing * 3) auto;
+  font-size: 16px;
+
+  span a {
+    padding: $small-spacing / 2;
+
+    &:hover {
+      border-bottom: 1px solid $action-color;
+      transition: border $base-duration $base-timing;
+    }
+  }
+
+  @media (max-width: 680px) {
+    .first,
+    .prev,
+    .next,
+    .last {
+      display: none;
+    }
+  }
+}

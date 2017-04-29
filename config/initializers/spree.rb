@@ -1,5 +1,5 @@
 # Configure Solidus Preferences
-# See http://docs.solidus.io/Spree/AppConfiguration.html for details
+# http://docs.solidus.io/Spree/AppConfiguration.html
 
 Spree.config do |config|
   config.use_static_preferences!
@@ -10,6 +10,7 @@ Spree.config do |config|
 
   # Default currency for new sites
   config.currency = "MDL"
+  config.products_per_page = 20
 
   # from address for transactional emails
   # config.mails_from = "store@example.com"
