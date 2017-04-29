@@ -6,14 +6,7 @@
 /  = render partial: "spree/shared/products", locals: { products: @products }
 
 - content_for :banner do
-  .banner
-    h1.moto Power in your hands
-    .tels
-      h5
-        | (929) 293 5385
-      h5
-        | (929) 293 5386
-
+  = render "banner"
 
 div
   - max_level = Spree::Config[:max_level_in_taxons_menu] || 3
