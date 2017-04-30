@@ -35,6 +35,6 @@
       = link_to image_tag(Spree::Config[:logo]), spree.root_path
     button#more-button.android-more-button.mdl-button.mdl-js-button.mdl-button--icon.mdl-js-ripple-effect
       i.material-icons more_vert
-    ul.mdl-menu.mdl-js-menu.mdl-menu--bottom-right.mdl-js-ripple-effect for="more-button"
+    ul.mdl-menu.mdl-js-menu.mdl-menu--bottom-right.mdl-js-ripple-effect.languages for="more-button"
       - available_locales_options.each do |locale|
         li.mdl-menu__item= link_to locale.first, spree.root_path(locale: locale.last)

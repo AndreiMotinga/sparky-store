@@ -79,6 +79,18 @@
   order: 3;
 }
 
+.languages {
+  li {
+    padding: 0;
+    a {
+      padding: 0 16px;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+}
+
 /**** Mobile layout ****/
 @media (max-width: 900px) {
   .android-navigation-container {
