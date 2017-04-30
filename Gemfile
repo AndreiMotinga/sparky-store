@@ -15,9 +15,9 @@ gem "sass-rails", "~> 5.0"
 gem "sprockets", ">= 3.0.0"
 gem "uglifier"
 
-gem "aws-sdk"
+gem "aws-sdk", "< 2.0"
 
-gem 'solidus', github: 'solidusio/solidus'
+gem "solidus"
 gem "solidus_auth_devise"
 gem "solidus_i18n", github: "solidusio-contrib/solidus_i18n", branch: "master"
 
