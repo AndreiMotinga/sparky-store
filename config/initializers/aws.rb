@@ -9,7 +9,7 @@ Spree.config do |config|
     storage:        :s3,
     s3_headers:     { "Cache-Control" => "max-age=31557600" },
     s3_protocol:    "https",
-    s3_region:      ENV['S3_REGION'],
+    s3_region:      ENV.fetch("S3_REGION"),
     url:            ":s3_alias_url",
     s3_host_alias:  ENV.fetch("S3_HOST"),
     bucket:         ENV.fetch("S3_BUCKET"),
