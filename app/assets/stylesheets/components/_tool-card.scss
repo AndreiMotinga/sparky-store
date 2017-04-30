@@ -2,8 +2,12 @@
   .text {
     font-size: 14px;
 
+    a {
+      color: $black;
+    }
+
     a:hover {
-      text-decoration: underline;
+      color: $action-color;
     }
   }
 }
