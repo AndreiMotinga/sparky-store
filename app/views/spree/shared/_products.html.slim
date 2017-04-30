@@ -16,7 +16,7 @@
 
 - products.each do |product|
   - url = spree.product_path(product, taxon_id: @taxon.try(:id))
-  div[class="product mdl-card mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--12-col-phone mdl-shadow--2dp" id="product_#{product.id}" itemscope="" itemtype="http://schema.org/Product"]
+  div[class="product mdl-card mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--12-col-phone mdl-shadow--2dp js-hover-card" id="product_#{product.id}" itemscope="" itemtype="http://schema.org/Product"]
     - cache(@taxon.present? ? [I18n.locale, current_pricing_options, @taxon, product] : [I18n.locale, current_pricing_options, product]) do
       /.product-image
       /  = link_to image_tag(product.display_image.attachment(:small), itemprop: "image"), url, itemprop: :url
