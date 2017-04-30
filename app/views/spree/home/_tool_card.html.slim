@@ -1,0 +1,11 @@
+.tool-card.mdl-card.mdl-cell.mdl-cell--6-col.mdl-cell--12-col-tablet.mdl-shadow--2dp
+  .mdl-card__title
+    h2.mdl-card__title-text
+      = link_to taxonomy.name, seo_url(taxonomy.root)
+  .text
+    .mdl-grid
+      .mdl-cell.mdl-cell--4-col.mdl-cell--12-col-tablet.mdl-typography--text-center
+        = image_tag taxonomy.root.icon.url(:normal)
+      .mdl-cell.mdl-cell--8-col.mdl-cell--12-col-tablet
+        - links = taxonomy.root.children.map { |t| link_to(t.name, seo_url(t)) }
+        = safe_join(links, " | ")

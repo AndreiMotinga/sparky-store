@@ -8,31 +8,5 @@
 - content_for :banner do
   = render "banner"
 
-.mdl-cell.mdl-cell--12-col.black
-  .mdl-grid.container.black
-    .mdl-cell--12-col
-      /- max_level = Spree::Config[:max_level_in_taxons_menu] || 3
-      /- Spree::Taxonomy.includes(root: :children).each do |taxonomy|
-      /  - cache [I18n.locale, taxonomy, max_level] do
-      /    = taxons_tree(taxonomy.root, @taxon, max_level)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      - Spree::Taxonomy.includes(root: :children).each do |taxonomy|
-        h6 = link_to taxonomy.name, seo_url(taxonomy.root)
-        ul
-          - taxonomy.root.children.find_each do |taxon|
-            li = link_to(taxon.name, seo_url(taxon))
+- Spree::Taxonomy.includes(root: :children).each do |taxonomy|
+  = render "spree/home/tool_card", taxonomy: taxonomy
