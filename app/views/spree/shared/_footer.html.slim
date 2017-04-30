@@ -6,61 +6,33 @@ footer.mdl-mega-footer
       h1.mdl-mega-footer__heading Information
       ul.mdl-mega-footer__link-list
         li= link_to t(:about), main_app.about_path
+        li= link_to t(:contacts), main_app.contacts_path
+
     .mdl-mega-footer__drop-down-section
       input.mdl-mega-footer__heading-checkbox[type="checkbox" checked]
-      h1.mdl-mega-footer__heading
-        | Details
+      h1.mdl-mega-footer__heading Details
       ul.mdl-mega-footer__link-list
-        li
-          a[href="#"]
-            | Specs
-        li
-          a[href="#"]
-            | Tools
-        li
-          a[href="#"]
-            | Resources
+        li: a[href="#"] Specs
+        li: a[href="#"] Tools
+        li: a[href="#"] Resources
+
     .mdl-mega-footer__drop-down-section
       input.mdl-mega-footer__heading-checkbox[type="checkbox" checked]
-      h1.mdl-mega-footer__heading
-        | Technology
+      h1.mdl-mega-footer__heading Technology
       ul.mdl-mega-footer__link-list
-        li
-          a[href="#"]
-            | How it works
-        li
-          a[href="#"]
-            | Patterns
-        li
-          a[href="#"]
-            | Usage
-        li
-          a[href="#"]
-            | Products
-        li
-          a[href="#"]
-            | Contracts
+        li: a[href="#"] How it works
+        li: a[href="#"] Products
+
     .mdl-mega-footer__drop-down-section
       input.mdl-mega-footer__heading-checkbox[type="checkbox" checked]
       h1.mdl-mega-footer__heading
         | FAQ
       ul.mdl-mega-footer__link-list
-        li
-          a[href="#"]
-            | Questions
-        li
-          a[href="#"]
-            | Answers
-        li
-          a[href="#"]
-            | Contact us
+        li: a[href="#"] Questions
+        li: a[href="#"] Contact us
+
   .mdl-mega-footer__bottom-section
-    .mdl-logo
-      | Title
+    .mdl-logo Title
     ul.mdl-mega-footer__link-list
-      li
-        a[href="#"]
-          | Help
-      li
-        a[href="#"]
-          | Privacy & Terms
+      li: a[href="#"] Help
+      li: a[href="#"] Privacy & Terms
