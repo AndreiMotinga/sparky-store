@@ -12,7 +12,10 @@
     /! Navigation
     .android-navigation-container
       nav#top-nav-bar.android-navigation.mdl-navigation
-        = link_to t(:about), main_app.about_path, class: "mdl-navigation__link mdl-typography--text-uppercase"
+        = link_to t(:contacts), main_app.contacts_path(locale: I18n.locale),
+                  class: "mdl-navigation__link mdl-typography--text-uppercase"
+        = link_to t(:about), main_app.about_path(locale: I18n.locale),
+                  class: "mdl-navigation__link mdl-typography--text-uppercase"
         - if spree_current_user
           = link_to Spree.t(:my_account),
                     spree.account_path,

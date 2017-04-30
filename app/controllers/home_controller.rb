@@ -1,6 +1,4 @@
-class HomeController < ApplicationController
-  layout "spree/layouts/spree_application"
-
-  def about
-  end
+class HomeController < Spree::BaseController
+  def about; end
+  def contacts; end
 end

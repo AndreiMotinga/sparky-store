@@ -1,0 +1,19 @@
+- content_for :ribbon_content do
+  h3.title= "#{t('home.contact.h4')} - Delta Instrument SRL"
+  = I18n.t('home.contact.str')
+  br/
+  = I18n.t('home.contact.city')
+  br/
+  | Tel.: +373 22 846 300
+  br/
+  | Fax : +373 22 846 400
+  br/
+  | e-mail: delta-instrument@mail.ru
+  br/
+  br/
+  br/
+  br/
+  iframe allowfullscreen="" frameborder="0" height="600" src="https://www.google.com/maps/embed?pb=!1m17!1m8!1m3!1d24178.555842087037!2d28.876579571387733!3d47.00460999049326!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d46.9898297!2d28.9083331!5e0!3m2!1sen!2sus!4v1437688394207" style="border:0" width="800"
+
+- content_for :ribbon do
+  = render "home/ribbon"

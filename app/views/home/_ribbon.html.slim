@@ -1,12 +1,7 @@
+.demo-ribbon.mdl-shadow--8dp
 .mdl-cell.mdl-cell--12-col
-  .demo-ribbon
   main.demo-main.mdl-layout__content
     .demo-container.mdl-grid
       .mdl-cell.mdl-cell--2-col.mdl-cell--hide-tablet.mdl-cell--hide-phone
-      .demo-content.mdl-color--white.mdl-shadow--4dp.content.mdl-cell.mdl-cell--8-col
-        .demo-crumbs.mdl-color-text--grey-500
-          = link_to "Solidus", spree.root_path
-          |  &gt;
-          = " "
-          span= t(action_name)
-        = yield :ribbon
+      .demo-content.mdl-color--white.mdl-shadow--16dp.content.mdl-cell.mdl-cell--8-col
+        = yield :ribbon_content

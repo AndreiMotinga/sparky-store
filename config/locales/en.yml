@@ -1,2 +1,33 @@
-en-GB:
-  hello: "Hello world"
+en:
+  contacts: Contacts
+  about: About
+  home:
+    about:
+      p1: With over 50 years of manufacturing experience, their own 40 acre European manufacturing plant and a committed and highly qualified workforce, SPARKY continue to produce the high quality and design of Power Tools that has established SPARKY as a brand leader amongst the world’s top selling power tool brands. The SPARKY GROUP has a clearly focused strategy of generating profitable growth through reinvestment in order to maintain the technical excellence of their innovative and reliable products. This long term budgeted plan has resulted in a steady growth of the 200 Power Tools and Accessories, that now make up the SPARKY Professional range of products. Today more than 2.000 people work in the SPARKY GROUP.
+      p2: SPARKY’s vast European production facility and modern automatic production lines, (guaranteeing fast flexible production with 100% quality control) benefits from using major components, motors, gears and housings that are manufactured in house. This unique system of start to finish manufacturing, from raw material to finished tools, guarantees quality from the very start of the manufacturing process. Continued high levels of investment, in research, development and modernisation of manufacturing plant and all its processes have allowed SPARKY to concentrate on the quality of products that are designed, manufactured and assembled in their own factory. The SPARKY principal of controlled in house manufacturing guarantees that only the highest quality of tools are delivered to their customers
+      p3: The current SPARKY range of more than 200 Power Tools and accessories are designed for the most demanding jobs in adverse environments in the construction and engineering industries. Ongoing testing and continued improvement in the design (assisted by the use of SPARKY’s own rapid prototype facility) and in house manufacturing processes guarantee, that SPARKY products continue to perform to the highest standards required by the professional tradesmen that choose them.
+      h1: Our company – Professionalism and Excellence
+      h2: Our production – Precision and Quality
+      h3: Our Power Tools – Reliability and Performance
+    contact:
+      h4: Official distributor in Moldova
+      str: 29 Lunca Biculuy str.
+      city: Chisinau, Moldova
+      your_name: Your Name
+      email: E-mail
+      message: Message
+      send: Send
+      send_us_message: Send us a message
+    delivery:
+      h1: Delivery and Payments
+      payment_methods: Payment Methods
+      currier: Payment to the courier upon receipt of the goods
+      card: Credit card (temporary unavailable)
+      cash: Cash payment in the office
+      attention: Attention! Order minimum is 150L
+      delivered:  Orders within Chisinau will be delivered within 6 hours.
+      options: Pickup is possible from a store warehouse.
+      info: For more information or to find out what we can do if you're outside of the city please contact support
+      hours: Delivery Department hours
+      days: Monday - Friday
+    slogan: The Power in Your hands

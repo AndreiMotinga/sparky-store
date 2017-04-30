@@ -1,2 +1,34 @@
 ro:
+  contacts: Contacte
+  about: Despre noi
+  home:
+    about:
+      p1: Instrumentele electrice (SPARKY PROFESSIONAL)-este calitatea obisnuita europeana cu o experinta de50 ani de producere la propria uzina europeana.Intreprinderea SPARKY POWER TOOLS in decursul istoriei a mai multor ani de colaborare cu Moldova si tarile de peste hotare din merite a obtinut o reputatie de partener de incredere dar numele (Bolgarca) devenind sinonimul numelui instrumentului nostru,devine legendara.La moment SPARKY este una din cele mai progresiv dezvoltata din marcile europene de instrumente electrice de pe glob.Noi avem o clara strategie de dezvoltare cu accentul pe perfectarea tehnica redata in calitatea produselor si a serviciilor noastre.Fiecare din membru colectivului de doua mii de specialist SPARKY depun efortul sau in dezvoltarea intreprinderii ,obtinind scopul sau principal-producerea instrumentului de calitate,satisfacind toate virstele de exploatare si cerintele consumatorilor.
+      p2:  Uzina «SPARKY PROFESSIONAL» fondat in anul 1961 in orasul Loveci ,Bulgaria este producator de instrument electric European,producind circa 1milion unitati pe an.Utilaj modern si laborator personal de stiinta-tehnologica permit in timp foarte scurt inventarea si punerea in productie a modelelor noi,inoind si marind asortimentul in fiecare an.Prin profunzimea procesului de productie a unui sector uzina e unicala pe planeta.Aceasta sistema unica garanteaza 100%supravegherea calitatii si indeplinirea ciclului de producere la o intreprindere de la proiectare si testare pina la producerea produsului.Nivelul inalt de investitii in cercetarile stiintelor-tehnologice si tehnologii moderne de producere ,ne-au permis sa ne concentram la calitatea instrumentelor produse,inventate si produse la propria noastra uzina.
+      p3: Astazi experienta noastra de mai multi ani se reflecta in fiecare unitate  «SPARKY PROFESSIONAL» .Relatia optima dintre pret si calitate ,asortiment larg a instrumentului electric si accesorii- acestea sunt criteriile prin care majoritatea profesionalilor aleg produsele noastre,care le ajuta mesterilor sa execute lucrarile repede si calitativ.Acest instrument noi il numim  «SPARKY PROFESSIONAL» .
+      h1: SPARKY-EXPERIENTA SI OBICEIURI
+      h2: SPARKY –INDUSTRIE DE TEHNOLOGIE INALTA MODERNA
+      h3: SPARKY –ALEGEREA PROFESIONALILOR
+    contact:
+      h4: Distribuitor oficial in Moldova
+      str: 29 Lunka Bîkului str.
+      city: Chișinău, Moldova
+      your_name: Nume
+      email: E-mail
+      message: Mesaj
+      send: Trimite
+      send_us_message: Trimite-ne un mesaj
+    delivery:
+      h1: Achitarea si Livrarea
+      payment_methods: Metoda de achitare
+      currier: Achitarea curierului dupa primirea marfii
+      card: Achitarea cu cardul(temporar inaccesibil)
+      cash: Achitarea numerar in magazin
+      attention: Atentie!Comanda minima de 150 lei .Comanda in suma mai mica nu va fi livrata.
+      delivered: Livrarea in raza orasului in decurs de 6 ore.
+      options: Posibilitatea de ridicare personala
+      info: Pentru mai multa informatie (sau pentru convorbire in privinta livrarii in alte orase sau regiuni )sunati la nr.de telefon
+      hours: Orele de lucru sectie livrari
+      days: Luni-Vineri
+    slogan: The Power in Your hands
 

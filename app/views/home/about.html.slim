@@ -1,21 +1,20 @@
-- content_for :ribbon do
-  h3 Hey there
-  p
-    | Hi there. This website is a demo of #{link_to "Solidus e-commerce.", "//solidus.io", target: "_blank"}
-    br
-    | #{link_to "Material Design Lite", "getmdl.io/", target: "_blank" } was used on frontend to style pages.
-    br
-    | You can log in to #{link_to "admin panel", "/admin/login", target: "_blank"} with
-    br
-    .mdl-cell.mdl-color--grey-100
-      code
-        | login: admin@example.com
-        br
-        | password: test123
-    br
-    br
-    | Feel free to click around and explore the platform.
-    br
-    = link_to "Source code for this app is here", "https://github.com/AndreiMotinga/store", target: "_blank"
+- content_for :ribbon_content do
+  h3.title= I18n.t('home.about.h1')
+  p= I18n.t('home.about.p1')
+  h3.title= I18n.t('home.about.h2')
+  p= I18n.t('home.about.p2')
+  h3.title= I18n.t('home.about.h3')
+  p= I18n.t('home.about.p3')
+  iframe[ allowfullscreen=""
+          frameborder="0"
+          height="315"
+          src="https://www.youtube.com/embed/c0yz1_dczeg"
+          width="50%"]
+  iframe[ allowfullscreen=""
+          frameborder="0"
+          width="50%"
+          height="315"
+          src="https://www.youtube.com/embed/1eRDo9l1Fc8"]
 
-= render "home/ribbon"
+- content_for :ribbon do
+  = render "home/ribbon"
