@@ -13,21 +13,21 @@
     .android-navigation-container
       nav#top-nav-bar.android-navigation.mdl-navigation
         = link_to t(:contacts), main_app.contacts_path(locale: I18n.locale),
-                  class: "mdl-navigation__link mdl-typography--text-uppercase"
+                  class: "mdl-navigation__link"
         = link_to t(:about), main_app.about_path(locale: I18n.locale),
-                  class: "mdl-navigation__link mdl-typography--text-uppercase"
+                  class: "mdl-navigation__link"
         - if spree_current_user
           = link_to Spree.t(:my_account),
                     spree.account_path,
-                    class: "mdl-navigation__link mdl-typography--text-uppercase"
+                    class: "mdl-navigation__link"
           = link_to Spree.t(:logout),
                     spree.logout_path,
-                    class: "mdl-navigation__link mdl-typography--text-uppercase"
+                    class: "mdl-navigation__link"
         - else
           = link_to Spree.t(:login),
                     spree.login_path,
-                    class: "mdl-navigation__link mdl-typography--text-uppercase"
-        span id="link-to-cart" data-hook=""
+                    class: "mdl-navigation__link"
+        span class="js-link-to-cart" data-hook=""
         javascript:
           Spree.fetch_cart("#{j spree.cart_link_url}")
 

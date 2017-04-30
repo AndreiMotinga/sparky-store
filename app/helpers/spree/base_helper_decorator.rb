@@ -39,7 +39,7 @@ module Spree
       end
       link_to text.html_safe,
               spree.cart_path,
-              class: "cart-info #{css_class} mdl-navigation__link mdl-typography--text-uppercase"
+              class: "cart-info #{css_class} mdl-navigation__link"
     end
   end
 end
