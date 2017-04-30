@@ -1,5 +1,8 @@
 - content_for :ribbon_content do
-  h3.title= "#{t('home.contact.h4')} - Delta Instrument SRL"
+  h3.title
+    = "Delta Instrument SRL"
+    br
+    = t('home.contact.h4')
   = I18n.t('home.contact.str')
   br/
   = I18n.t('home.contact.city')
