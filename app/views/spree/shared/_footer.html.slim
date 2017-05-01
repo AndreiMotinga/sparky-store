@@ -3,7 +3,7 @@ footer.mdl-mega-footer
   .mdl-mega-footer__middle-section
     .mdl-mega-footer__drop-down-section
       input.mdl-mega-footer__heading-checkbox[type="checkbox" checked]
-      h1.mdl-mega-footer__heading Information
+      h1.mdl-mega-footer__heading= t :information
       ul.mdl-mega-footer__link-list
         li= link_to t(:about), main_app.about_path(locale: :"en-US")
         li= link_to t(:contacts), main_app.contacts_path(locale: :"en-US")
@@ -32,7 +32,7 @@ footer.mdl-mega-footer
         li: a[href="#"] Contact us
 
   .mdl-mega-footer__bottom-section
-    .mdl-logo Title
+    .mdl-logo SPARKY PROFESSIONAL TOOLS
     ul.mdl-mega-footer__link-list
-      li: a[href="#"] Help
+      li: a[href=""] Help
       li: a[href="#"] Privacy & Terms
