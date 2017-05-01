@@ -11,6 +11,7 @@ Spree.config do |config|
   # Default currency for new sites
   config.currency = "MDL"
   config.products_per_page = 20
+  config.max_level_in_taxons_menu = 5
 
   # from address for transactional emails
   # config.mails_from = "store@example.com"

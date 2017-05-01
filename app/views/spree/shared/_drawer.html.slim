@@ -4,20 +4,27 @@
     h6 class="taxonomy-root cart js-link-to-cart" data-hook=""
     javascript:
       Spree.fetch_cart("#{j spree.cart_link_url}")
-  nav#taxonomies.sidebar-item.mdl-navigation data-hook=""
-    - max_level = Spree::Config[:max_level_in_taxons_menu] || 3
-    - Spree::Taxonomy.includes(root: :children).each do |taxonomy|
-      - cache [I18n.locale, taxonomy, max_level] do
-        .android-drawer-separator
-        h6.taxonomy-root= link_to taxonomy.name, seo_url(taxonomy.root)
-        = drawer_taxons_tree(taxonomy.root, @taxon, max_level)
+  nav.mdl-navigation data-hook=""
+    .mainmenu
+      .android-drawer-separator
+      - Spree::Taxonomy.includes(root: :children).each do |taxonomy|
+        - cache [I18n.locale, taxonomy, 5] do
+          li.js-mainmenu__link
+            h6.taxonomy-root
+              li
+                = link_to t(taxonomy.name), "#"
+                i.material-icons keyboard_arrow_down
+            ul.submenu
+              li= link_to t(:show_all), seo_url(taxonomy.root), class: "mdl-navigation__link"
+              = drawer_taxons_tree(taxonomy.root, @taxon)
 
-    h6.taxonomy-root= link_to t(:contacts), main_app.contacts_path(locale: I18n.locale)
-    h6.taxonomy-root= link_to t(:about), main_app.about_path(locale: I18n.locale)
-    - if spree_current_user
-      h6.taxonomy-root= link_to Spree.t(:my_account), spree.account_path
-      h6.taxonomy-root= link_to Spree.t(:logout), spree.logout_path
-    - else
-      h6.taxonomy-root= link_to Spree.t(:login), spree.login_path
-    br
-    br
+      .android-drawer-separator
+      h6.taxonomy-root= link_to t(:contacts), main_app.contacts_path(locale: I18n.locale)
+      h6.taxonomy-root= link_to t(:about), main_app.about_path(locale: I18n.locale)
+      - if spree_current_user
+        h6.taxonomy-root= link_to Spree.t(:my_account), spree.account_path
+        h6.taxonomy-root= link_to Spree.t(:logout), spree.logout_path
+      - else
+        h6.taxonomy-root= link_to Spree.t(:login), spree.login_path
+      br
+      br
