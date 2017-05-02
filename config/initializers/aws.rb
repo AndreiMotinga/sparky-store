@@ -17,6 +17,7 @@ Spree.config do |config|
     styles: {
       mini:     "48x48>",
       small:    "100x100>",
+      # TODO FIX change to normal
       product:  "240x240>",
       large:    "600x600>"
     },
@@ -28,5 +29,6 @@ Spree.config do |config|
 
   attachment_config.each do |key, value|
     Spree::Image.attachment_definitions[:attachment][key.to_sym] = value
+    Spree::Taxon.attachment_definitions[:icon][key.to_sym] = value
   end
 end unless Rails.env.test?

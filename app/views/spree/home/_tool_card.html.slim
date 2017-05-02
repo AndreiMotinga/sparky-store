@@ -5,7 +5,7 @@
   .text
     .mdl-grid
       .mdl-cell.mdl-cell--4-col.mdl-cell--12-col-tablet.mdl-typography--text-center
-        = image_tag taxonomy.root.icon.url(:normal)
+        = image_tag taxonomy.root.icon.url(:product)
       .mdl-cell.mdl-cell--8-col.mdl-cell--12-col-tablet
         - links = taxonomy.root.children.map { |t| link_to(t.name, seo_url(t)) }
         = safe_join(links, " | ")
