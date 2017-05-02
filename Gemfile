@@ -15,7 +15,7 @@ gem "sass-rails", "~> 5.0"
 gem "sprockets", ">= 3.0.0"
 gem "uglifier"
 
-gem "aws-sdk", "< 2.0"
+gem "aws-sdk"
 
 gem "solidus"
 gem "solidus_auth_devise"
