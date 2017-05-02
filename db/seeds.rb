@@ -7,12 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# Spree::Core::Engine.load_seed if defined?(Spree::Core)
-# Spree::Auth::Engine.load_seed if defined?(Spree::Auth)
+Spree::Core::Engine.load_seed if defined?(Spree::Core)
+Spree::Auth::Engine.load_seed if defined?(Spree::Auth)
 
-Spree::Country.find_or_create_by(
-  iso_name: "MOLDOVA, REPUBLIC OF",
-  iso: "MD",
-  iso3: "MDA",
-  name: "Moldova, Republic of",
-)
+# Spree::Country.find_or_create_by(
+#   iso_name: "MOLDOVA, REPUBLIC OF",
+#   iso: "MD",
+#   iso3: "MDA",
+#   name: "Moldova, Republic of",
+# )
