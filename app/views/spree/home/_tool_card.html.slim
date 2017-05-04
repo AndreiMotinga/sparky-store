@@ -1,11 +1,11 @@
-.tool-card.mdl-card.mdl-cell.mdl-cell--6-col.mdl-cell--12-col-tablet.mdl-shadow--2dp.js-hover-card
-  .mdl-card__title
-    h2.mdl-card__title-text
-      = link_to taxonomy.name, seo_url(taxonomy.root)
+.tool-card.mdl-card.mdl-cell.mdl-cell--4-col.mdl-cell--12-col-tablet.mdl-shadow--2dp.js-hover-card
+  .mdl-card__title.mdl-typography--text-center
+    h2.mdl-card__title-text.mdl-typography--text-center
+      = link_to taxonomy.name, seo_url(taxonomy.root), class: "link mdl-typography--text-center"
   .text
     .mdl-grid
-      .mdl-cell.mdl-cell--4-col.mdl-cell--12-col-tablet.mdl-typography--text-center
-        = image_tag taxonomy.root.icon.url(:product)
-      .mdl-cell.mdl-cell--8-col.mdl-cell--12-col-tablet
-        - links = taxonomy.root.children.map { |t| link_to(t.name, seo_url(t)) }
-        = safe_join(links, " | ")
+      .mdl-cell.mdl-cell--4-col.mdl-cell--3-col-tablet.mdl-cell-4-col-phone.mdl-typography--text-center.icon
+        = image_tag taxonomy.root.icon.url(:small)
+      .mdl-cell.mdl-cell--8-col.mdl-cell--5-col-tablet.mdl-cell-4-col-phone.categories
+        - links = taxonomy.root.children.map { |t| content_tag(:li, link_to(t.name, seo_url(t))) }
+        = safe_join(links, "\n")

@@ -8,5 +8,7 @@
 - content_for :banner do
   = render "banner"
 
-- Spree::Taxonomy.includes(root: :children).each do |taxonomy|
-  = render "spree/home/tool_card", taxonomy: taxonomy
+.mdl-cell.mdl-cell--12-col
+  .mdl-grid
+    - Spree::Taxonomy.includes(root: :children).each do |taxonomy|
+      = render "spree/home/tool_card", taxonomy: taxonomy
