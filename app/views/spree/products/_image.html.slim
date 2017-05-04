@@ -1,4 +1,21 @@
-- if defined?(image) && image
-  = image_tag image.attachment.url(:product), itemprop: "image"
+- count = (@product.images + @product.variant_images).uniq.size
+
+- if count == 1
+  - if defined?(image) && image
+    = link_to image.attachment.url(:product),
+              itemprop: "image",
+              class: "js-touch",
+              title: image.attachment.url(:original) do
+      = image_tag image.attachment.url(:original)
+  - else
+    = link_to @product.display_image.attachment(:product),
+              itemprop: "image",
+              title: @product.display_image.attachment.url(:original),
+              class: "js-touch" do
+      = image_tag @product.display_image.attachment(:product)
+
 - else
-  = image_tag @product.display_image.attachment(:product), itemprop: "image"
+  - if defined?(image) && image
+    = image_tag image.attachment.url(:product), itemprop: "image"
+  - else
+    = image_tag @product.display_image.attachment(:product), itemprop: "image"
