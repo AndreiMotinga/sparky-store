@@ -1,3 +1,26 @@
 .product.mdl-card {
+  $height: 20px;
   min-height: 320px;
+
+  .mdl-card__supporting-text {
+    padding: 0;
+    width: 100%;
+  }
+
+  .mdl-data-table {
+    width: 100%;
+    border-left: none;
+    border-right: none;
+
+    .table-row {
+      height: $height;
+      line-height: 10px;
+    }
+
+    td {
+      height: $height;
+      padding-top: $small-spacing;
+      padding-bottom: $small-spacing;
+    }
+  }
 }
