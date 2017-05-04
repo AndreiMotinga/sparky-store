@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Spree::Core::Engine.load_seed if defined?(Spree::Core)
-Spree::Auth::Engine.load_seed if defined?(Spree::Auth)
+# Spree::Core::Engine.load_seed if defined?(Spree::Core)
+# Spree::Auth::Engine.load_seed if defined?(Spree::Auth)
 
 # Spree::Country.find_or_create_by(
 #   iso_name: "MOLDOVA, REPUBLIC OF",
@@ -16,3 +16,15 @@ Spree::Auth::Engine.load_seed if defined?(Spree::Auth)
 #   iso3: "MDA",
 #   name: "Moldova, Republic of",
 # )
+
+Spree::ProductProperty.delete_all
+Spree::Property.delete_all
+Spree::Property.create(name: "Зернистость диска", presentation: "Зернистость диска")
+Spree::Property.create(name: "Площать шлифования", presentation: "Площать шлифования")
+Spree::Property.create(name: "Класс защиты", presentation: "Класс защиты")
+
+Spree::Product.find_each do |p|
+  Spree::Property.find_each do |prop|
+    p.product_properties.create(property: prop, value: ["Red", "23mm", "25mm", "deep", "straight", "rand"].sample)
+  end
+end
