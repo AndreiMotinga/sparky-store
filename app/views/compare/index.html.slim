@@ -1,0 +1,21 @@
+- products = Spree::Product.where(id: [36, 67])
+- property_ids = products.joins(:product_properties).distinct(:name).pluck :property_id
+
+.mdl-cell.mdl-cell--12-col.red
+  h1 Compare products
+
+.mdl-cell.mdl-cell--12-col.red
+  .table-responsive
+    table.mdl-data-table.mdl-js-data-table.mdl-shadow--4dp
+      thead
+        tr
+          th.mdl-data-table__cell--non-numeric Property
+          - products.each do |product|
+            th= product.name
+      tbody
+        - property_ids.each do |prop_id|
+          tr
+            td.mdl-data-table__cell--non-numeric= Spree::Property.find(prop_id).name
+            - products.each do |product|
+              - value = product.product_properties.where(property_id: prop_id).first.try(:value)
+              td= value || " - "
