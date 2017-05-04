@@ -11,4 +11,5 @@
 // about supported directives.
 //
 //= require material
+//= require touch
 //= require_tree .
