@@ -9,10 +9,7 @@
           tr
             th.mdl-data-table__cell--non-numeric Характеристики
             - products.each do |product|
-              th
-                = link_to "X", "#", class: "js-remove-from-comparison", data: { id: product.id }
-                = " "
-                = link_to product.name, spree.product_path(product), target: "_blank"
+              th = link_to product.name, spree.product_path(product), target: "_blank"
         tbody
           tr
             td.mdl-data-table__cell--non-numeric Price
@@ -25,16 +22,23 @@
               - products.each do |product|
                 - value = product.product_properties.where(property_id: prop_id).first.try(:value)
                 td= value || " - "
+          tr
+            td.mdl-data-table__cell--non-numeric Удалить
+            - products.each do |product|
+              td
+                = link_to "#", class: "js-remove-from-comparison", data: { id: product.id } do
+                  i.material-icons delete forever
 
   .mdl-cell.mdl-cell--12-col.mdl-typography--text-center
     br
-    = link_to "Очистить",
-              main_app.compare_path,
-              class: "mdl-button mdl-button--raised mdl-button--accent js-compare-clear"
-
+    = link_to main_app.compare_path,
+              class: "mdl-button mdl-button--raised mdl-button--accent js-compare-clear" do
+      i.material-icons delete
+      |  Очистить
     = "  "
-    = link_to "Обновить", "#",
-              class: "mdl-button mdl-button--raised mdl-button--accent js-compare-refresh"
+    = link_to "#", class: "mdl-button mdl-button--raised mdl-button--accent js-compare-refresh" do
+      i.material-icons cached
+      |  Обновить
 
 - else
   .mdl-cell.mdl-cell--12-col.mdl-typography--text-center
