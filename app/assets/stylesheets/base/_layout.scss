@@ -18,3 +18,10 @@ a img{
   display: flex;
   flex-direction: column;
 }
+
+.action-buttons {
+  a {
+    margin: 1px;
+    float: right
+  }
+}

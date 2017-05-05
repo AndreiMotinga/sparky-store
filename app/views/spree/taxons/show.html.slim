@@ -3,6 +3,13 @@
   /div data-hook="taxon_sidebar_navigation"
   /  = render partial: 'spree/shared/taxonomies'
   /  = render partial: 'spree/shared/filters' if @taxon.children.empty?
+
+- content_for :actions
+  = link_to "Перейти к сравнению",
+            main_app.compare_path,
+            id: "compare-link",
+            class: "mdl-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent compare-link"
+
 = render partial: 'spree/shared/products', locals: { products: @products, taxon: @taxon }
 
 - unless params[:keywords].present?

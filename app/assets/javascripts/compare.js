@@ -16,6 +16,14 @@ $(function(){
     setStore();
   })
 
+  $("body.compare").on('click', '.js-remove-from-comparison', function(e) {
+    removeFromComparison( $(this).data('id') )
+  })
+
+  $("body.compare").on('click', '.js-compare-refresh', function(e) {
+    window.location = "/compare?" + $.param({ids: window.ToolsStore.ids})
+  })
+
 });
 
 function checkCompareButton() {
@@ -42,6 +50,14 @@ function removeId(id) {
   changeLink('remove', id, "Добавить в сравнениe");
   checkCompareButton();
   setStore();
+}
+
+function removeFromComparison(id) {
+  window.ToolsStore.ids = ToolsStore.ids.filter(function(item) {
+    return item != id
+  })
+  setStore();
+  window.location = "/compare?" + $.param({ids: window.ToolsStore.ids})
 }
 
 function changeLink(type, id, text) {

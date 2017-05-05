@@ -1,32 +1,42 @@
 - products = Spree::Product.where(id: params[:ids])
 - property_ids = products.joins(:product_properties).distinct(:name).pluck :property_id
 
-.mdl-cell.mdl-cell--12-col
-  .table-responsive
-    table.mdl-data-table.mdl-js-data-table.mdl-shadow--8dp style="margin: 0 auto;"
-      thead
-        tr
-          th.mdl-data-table__cell--non-numeric Характеристики
-          - products.each do |product|
-            th
-              /= link_to "X", "#", class: "js-remove-id", data: { id: product.id }
-              /= " "
-              = link_to product.name, spree.product_path(product), target: "_blank"
-      tbody
-        tr
-          td.mdl-data-table__cell--non-numeric Price
-          - products.each do |product|
-            td= product.price
-
-        - property_ids.each do |prop_id|
+- if products.present?
+  .mdl-cell.mdl-cell--12-col
+    .table-responsive
+      table.mdl-data-table.mdl-js-data-table.mdl-shadow--8dp style="margin: 0 auto;"
+        thead
           tr
-            td.mdl-data-table__cell--non-numeric= Spree::Property.find(prop_id).name
+            th.mdl-data-table__cell--non-numeric Характеристики
             - products.each do |product|
-              - value = product.product_properties.where(property_id: prop_id).first.try(:value)
-              td= value || " - "
+              th
+                = link_to "X", "#", class: "js-remove-from-comparison", data: { id: product.id }
+                = " "
+                = link_to product.name, spree.product_path(product), target: "_blank"
+        tbody
+          tr
+            td.mdl-data-table__cell--non-numeric Price
+            - products.each do |product|
+              td= product.price
 
-.mdl-cell.mdl-cell--12-col.mdl-typography--text-center
-  br
-  = link_to "Убрать все из сравнения",
-            spree.root_path,
-            class: "mdl-button mdl-button--raised mdl-button--accent js-compare-clear"
+          - property_ids.each do |prop_id|
+            tr
+              td.mdl-data-table__cell--non-numeric= Spree::Property.find(prop_id).name
+              - products.each do |product|
+                - value = product.product_properties.where(property_id: prop_id).first.try(:value)
+                td= value || " - "
+
+  .mdl-cell.mdl-cell--12-col.mdl-typography--text-center
+    br
+    = link_to "Очистить",
+              main_app.compare_path,
+              class: "mdl-button mdl-button--raised mdl-button--accent js-compare-clear"
+
+    = "  "
+    = link_to "Обновить", "#",
+              class: "mdl-button mdl-button--raised mdl-button--accent js-compare-refresh"
+
+- else
+  .mdl-cell.mdl-cell--12-col.mdl-typography--text-center
+    h3 Здесь пока ничего нет
+    small = link_to "Добавьте товары в сравнение", spree.products_path

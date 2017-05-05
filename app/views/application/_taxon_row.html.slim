@@ -1,9 +1,5 @@
-.mdl-cell.mdl-cell--10-col
+.mdl-cell.mdl-cell--9-col class="#{'action' if taxon_breadcrumbs(@taxon).present?}"
   = taxon_breadcrumbs(@taxon) if defined?(taxon_breadcrumbs)
 
-- if controller_name == "taxons"
-  .mdl-cell.mdl-cell--2-col
-    = link_to "Перейти к сравнению",
-              main_app.compare_path(ids: [1,2,3]),
-              id: "compare-link",
-              class: "mdl-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent compare-link"
+.mdl-cell.mdl-cell--3-col.action-buttons
+  = yield :actions
