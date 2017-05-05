@@ -1,16 +1,16 @@
-- products = Spree::Product.where(id: (1..8).to_a)
+- products = Spree::Product.where(id: params[:ids])
 - property_ids = products.joins(:product_properties).distinct(:name).pluck :property_id
 
 .mdl-cell.mdl-cell--12-col
   .table-responsive
-    table.mdl-data-table.mdl-js-data-table.mdl-shadow--4dp style="margin: 0 auto;"
+    table.mdl-data-table.mdl-js-data-table.mdl-shadow--8dp style="margin: 0 auto;"
       thead
         tr
           th.mdl-data-table__cell--non-numeric Характеристики
           - products.each do |product|
             th
-              = link_to "X", "#", class: "js-remove-id", data: { id: product.id }
-              = " "
+              /= link_to "X", "#", class: "js-remove-id", data: { id: product.id }
+              /= " "
               = link_to product.name, spree.product_path(product), target: "_blank"
       tbody
         - property_ids.each do |prop_id|
@@ -20,8 +20,8 @@
               - value = product.product_properties.where(property_id: prop_id).first.try(:value)
               td= value || " - "
 
-.mdl-cell.mdl-cell--12-col
+.mdl-cell.mdl-cell--12-col.mdl-typography--text-center
   br
   = link_to "Убрать все из сравнения",
-            compare_path,
+            spree.root_path,
             class: "mdl-button mdl-button--raised mdl-button--accent js-compare-clear"

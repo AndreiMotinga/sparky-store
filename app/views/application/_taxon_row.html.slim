@@ -4,5 +4,6 @@
 - if controller_name == "taxons"
   .mdl-cell.mdl-cell--2-col
     = link_to "Перейти к сравнению",
-                main_app.compare_path,
-                class: "mdl-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent js-compare-link compare-link"
+              main_app.compare_path(ids: [1,2,3]),
+              id: "compare-link",
+              class: "mdl-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent compare-link"
