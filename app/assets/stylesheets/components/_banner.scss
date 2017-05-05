@@ -2,7 +2,7 @@
   max-width: 1100px;
   margin: 0 auto;
   margin-top: $base-spacing;
-  background: linear-gradient(30deg, red, black);
+  background: linear-gradient(30deg, $white, red);
 
   .content {
     max-width: 900px;

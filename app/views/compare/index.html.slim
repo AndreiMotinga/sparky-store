@@ -13,6 +13,11 @@
               /= " "
               = link_to product.name, spree.product_path(product), target: "_blank"
       tbody
+        tr
+          td.mdl-data-table__cell--non-numeric Price
+          - products.each do |product|
+            td= product.price
+
         - property_ids.each do |prop_id|
           tr
             td.mdl-data-table__cell--non-numeric= Spree::Property.find(prop_id).name
