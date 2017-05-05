@@ -1,4 +1,4 @@
-- products = Spree::Product.where(id: [36, 67])
+- products = Spree::Product.where(id: (1..10).to_a)
 - property_ids = products.joins(:product_properties).distinct(:name).pluck :property_id
 
 .mdl-cell.mdl-cell--12-col.red

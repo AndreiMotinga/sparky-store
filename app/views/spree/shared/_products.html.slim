@@ -39,5 +39,11 @@
           span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer"
             span itemprop="price" = display_price(product)
 
+      .mdl-card__menu
+        button.mdl-button.mdl-js-button.mdl-button--icon id="demo-menu-lower-right-#{product.id}"
+          i.material-icons more_vert
+        ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect for="demo-menu-lower-right-#{product.id}"
+          li.mdl-menu__item.js-add-id data-id=product.id Add to comparison
+
 - if paginated_products.respond_to?(:total_pages)
   = paginate paginated_products
