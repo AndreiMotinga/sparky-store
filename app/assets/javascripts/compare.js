@@ -3,17 +3,31 @@ window.ToolsStore = JSON.parse( localStorage.getItem('ToolsStore') ) || { ids: [
 $(function(){
   checkCompareButton();
 
-  $(".product").on('click', '.js-add-id', function(e) {
+  $("body.spree-taxons").on('click', '.js-add-id', function(e) {
     console.log("adding")
     addId( $(this).data('id') )
     console.log(ToolsStore.ids)
   })
 
-  $(".product").on('click', '.js-remove-id', function(e) {
+  $("body.spree-taxons").on('click', '.js-remove-id', function(e) {
     console.log("removing")
     removeId( $(this).data('id') )
     console.log(ToolsStore.ids)
   })
+
+  $("body.compare").on('click', '.js-remove-id', function(e) {
+    console.log("removing")
+    removeId( $(this).data('id') )
+    console.log(ToolsStore.ids)
+  })
+
+  $("body.compare").on('click', '.js-compare-clear', function(e) {
+    console.log("clearing")
+    window.ToolsStore.ids = []
+    setStore();
+    console.log(ToolsStore.ids)
+  })
+
 });
 
 function setStore() {

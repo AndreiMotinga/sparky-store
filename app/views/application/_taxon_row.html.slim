@@ -1,9 +1,7 @@
-- if taxon_breadcrumbs(@taxon).present?
-  .mdl-cell.mdl-cell--10-col
-    .red
-      = taxon_breadcrumbs(@taxon) if defined?(taxon_breadcrumbs)
+.mdl-cell.mdl-cell--10-col
+  = taxon_breadcrumbs(@taxon) if defined?(taxon_breadcrumbs)
 
-- unless controller_name == "home"
+- if controller_name == "taxons"
   .mdl-cell.mdl-cell--2-col
     = link_to "Перейти к сравнению",
                 main_app.compare_path,
