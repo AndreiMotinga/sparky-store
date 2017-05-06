@@ -17,14 +17,18 @@
 #   name: "Moldova, Republic of",
 # )
 
-Spree::ProductProperty.delete_all
-Spree::Property.delete_all
-Spree::Property.create(name: "Зернистость диска", presentation: "Зернистость диска")
-Spree::Property.create(name: "Площать шлифования", presentation: "Площать шлифования")
-Spree::Property.create(name: "Класс защиты", presentation: "Класс защиты")
+["Red", "23mm", "25mm", "deep", "straight", "rand"].map { |value| Spree::Value.create(name: value) }
 
 Spree::Product.find_each do |p|
   Spree::Property.find_each do |prop|
-    p.product_properties.create(property: prop, value: ["Red", "23mm", "25mm", "deep", "straight", "rand"].sample)
+    name = ["Red", "23mm", "25mm", "deep", "straight", "rand"].sample
+    val = Spree::Value.find_by(name: name)
+    p.product_properties.create(property: prop, value_id: val.id)
   end
+end
+
+Spree::Product.find_each do |p|
+  name = "Red"
+  val = Spree::Value.find_by(name: name)
+  p.product_properties.create(property: Spree::Property.first, value_id: val.id)
 end

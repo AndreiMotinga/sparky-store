@@ -20,7 +20,7 @@
             tr
               td.mdl-data-table__cell--non-numeric= Spree::Property.find(prop_id).name
               - products.each do |product|
-                - value = product.product_properties.where(property_id: prop_id).first.try(:value)
+                - value = product.product_properties.where(property_id: prop_id).first.try(:value).try(:name)
                 td= value || " - "
           tr
             td.mdl-data-table__cell--non-numeric Удалить

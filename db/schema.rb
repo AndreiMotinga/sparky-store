@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170502170136) do
+ActiveRecord::Schema.define(version: 20170506203206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -446,25 +446,16 @@ ActiveRecord::Schema.define(version: 20170502170136) do
   end
 
   create_table "spree_product_properties", force: :cascade do |t|
-    t.string   "value"
     t.integer  "product_id"
     t.integer  "property_id"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.integer  "position",    default: 0
+    t.integer  "value_id"
     t.index ["position"], name: "index_spree_product_properties_on_position", using: :btree
     t.index ["product_id"], name: "index_product_properties_on_product_id", using: :btree
     t.index ["property_id"], name: "index_spree_product_properties_on_property_id", using: :btree
-  end
-
-  create_table "spree_product_property_translations", force: :cascade do |t|
-    t.integer  "spree_product_property_id", null: false
-    t.string   "locale",                    null: false
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.string   "value"
-    t.index ["locale"], name: "index_spree_product_property_translations_on_locale", using: :btree
-    t.index ["spree_product_property_id"], name: "index_0968f57fbd8fb9f31050820cbb66109a266c516a", using: :btree
+    t.index ["value_id"], name: "index_spree_product_properties_on_value_id", using: :btree
   end
 
   create_table "spree_product_translations", force: :cascade do |t|
@@ -484,7 +475,7 @@ ActiveRecord::Schema.define(version: 20170502170136) do
   end
 
   create_table "spree_products", force: :cascade do |t|
-    t.string   "name",                 default: "",   null: false
+    t.string   "name",                 default: ""
     t.text     "description"
     t.datetime "available_on"
     t.datetime "deleted_at"
@@ -1228,6 +1219,22 @@ ActiveRecord::Schema.define(version: 20170502170136) do
     t.index ["deleted_at"], name: "index_spree_users_on_deleted_at", using: :btree
     t.index ["email"], name: "email_idx_unique", unique: true, using: :btree
     t.index ["spree_api_key"], name: "index_spree_users_on_spree_api_key", using: :btree
+  end
+
+  create_table "spree_value_translations", force: :cascade do |t|
+    t.integer  "spree_value_id", null: false
+    t.string   "locale",         null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "name"
+    t.index ["locale"], name: "index_spree_value_translations_on_locale", using: :btree
+    t.index ["spree_value_id"], name: "index_spree_value_translations_on_spree_value_id", using: :btree
+  end
+
+  create_table "spree_values", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "spree_variant_property_rule_conditions", force: :cascade do |t|
