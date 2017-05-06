@@ -1,5 +1,5 @@
-.mdl-cell.mdl-cell--9-col class="#{'action' if taxon_breadcrumbs(@taxon).present?}"
+.mdl-cell.mdl-cell--9-col.mdl-cell--12-col-tablet class="#{'action' if taxon_breadcrumbs(@taxon).present?}"
   = taxon_breadcrumbs(@taxon) if defined?(taxon_breadcrumbs)
 
-.mdl-cell.mdl-cell--3-col.action-buttons
+.mdl-cell.mdl-cell--3-col.mdl-cell--12-col-tablet.action-buttons
   = yield :actions
