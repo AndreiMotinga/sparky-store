@@ -23,4 +23,11 @@
       padding-bottom: $small-spacing;
     }
   }
+
+  .mdl-card__menu--left {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    font-size: 20px;
+  }
 }
