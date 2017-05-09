@@ -1,4 +1,4 @@
-SitemapGenerator::Sitemap.default_host = "http://#{Spree::Store.default.url}"
+SitemapGenerator::Sitemap.default_host = "https://www.sparky.md"
 SitemapGenerator::Sitemap.create_index = true
 SitemapGenerator::Sitemap.public_path = 'tmp/'
 SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
