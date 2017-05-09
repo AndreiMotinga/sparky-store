@@ -23,6 +23,8 @@ gem "solidus_i18n", github: "solidusio-contrib/solidus_i18n", branch: "master"
 gem 'globalize', github: 'globalize/globalize'
 gem 'solidus_globalize', github: 'AndreiMotinga/solidus_globalize'
 
+gem 'solidus_sitemap', github: 'danmitchell-/solidus_sitemap', branch: 'replace-deprected-product-active-scope'
+
 gem "material_design_lite-rails", "~> 1.3"
 gem "material_icons"
 gem "slim-rails"

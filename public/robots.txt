@@ -11,3 +11,5 @@ Disallow: /user
 Disallow: /account
 Disallow: /api
 Disallow: /password
+
+Sitemap: https://s3.amazonaws.com/ezpoisk/sitemaps/sitemap.xml.gz
