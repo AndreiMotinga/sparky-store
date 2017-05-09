@@ -5,6 +5,7 @@ Spree.config do |config|
   config.use_static_preferences!
   config.allow_guest_checkout = false
   config.address_requires_state = false
+  config.default_country_iso = "MD"
 
   # Core:
 
