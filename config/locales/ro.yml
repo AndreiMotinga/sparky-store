@@ -1,8 +1,12 @@
 ro:
-  contacts: Contacte
   about: Despre noi
-  show_all: Arată tot
-  information: Informație
+  compare:
+    add: Добавьте товары в сравнение
+    clear: Очистить
+    features: Характеристики
+    empty: Здесь пока ничего нет
+    refresh: Обновить
+  contacts: Contacte
   home:
     about:
       p1: Instrumentele electrice (SPARKY PROFESSIONAL)-este calitatea obisnuita europeana cu o experinta de50 ani de producere la propria uzina europeana.Intreprinderea SPARKY POWER TOOLS in decursul istoriei a mai multor ani de colaborare cu Moldova si tarile de peste hotare din merite a obtinut o reputatie de partener de incredere dar numele (Bolgarca) devenind sinonimul numelui instrumentului nostru,devine legendara.La moment SPARKY este una din cele mai progresiv dezvoltata din marcile europene de instrumente electrice de pe glob.Noi avem o clara strategie de dezvoltare cu accentul pe perfectarea tehnica redata in calitatea produselor si a serviciilor noastre.Fiecare din membru colectivului de doua mii de specialist SPARKY depun efortul sau in dezvoltarea intreprinderii ,obtinind scopul sau principal-producerea instrumentului de calitate,satisfacind toate virstele de exploatare si cerintele consumatorilor.
@@ -33,4 +37,4 @@ ro:
       hours: Orele de lucru sectie livrari
       days: Luni-Vineri
     slogan: The Power in Your hands
-
+  show_all: Arată tot

@@ -12,7 +12,7 @@
           li.js-mainmenu__link
             h6.taxonomy-root
               li
-                = link_to t(taxonomy.name), "#"
+                = link_to taxonomy.name, "#"
                 i.material-icons keyboard_arrow_down
             ul.submenu
               li= link_to t(:show_all), seo_url(taxonomy.root), class: "mdl-navigation__link"
