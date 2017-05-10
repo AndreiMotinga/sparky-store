@@ -1,38 +1,56 @@
 .mdl-layout-spacer
 footer.mdl-mega-footer
-  .mdl-mega-footer__middle-section
-    .mdl-mega-footer__drop-down-section
-      input.mdl-mega-footer__heading-checkbox[type="checkbox" checked]
-      h1.mdl-mega-footer__heading  Information
-      ul.mdl-mega-footer__link-list
-        li= link_to t(:about), main_app.about_path(locale: :"en-US")
-        li= link_to t(:contacts), main_app.contacts_path(locale: :"en-US")
-
-    .mdl-mega-footer__drop-down-section
-      input.mdl-mega-footer__heading-checkbox[type="checkbox" checked]
-      h1.mdl-mega-footer__heading Details
-      ul.mdl-mega-footer__link-list
-        li: a[href="#"] Specs
-        li: a[href="#"] Tools
-        li: a[href="#"] Resources
-
-    .mdl-mega-footer__drop-down-section
-      input.mdl-mega-footer__heading-checkbox[type="checkbox" checked]
-      h1.mdl-mega-footer__heading Technology
-      ul.mdl-mega-footer__link-list
-        li: a[href="#"] How it works
-        li: a[href="#"] Products
-
-    .mdl-mega-footer__drop-down-section
-      input.mdl-mega-footer__heading-checkbox[type="checkbox" checked]
-      h1.mdl-mega-footer__heading
-        | FAQ
-      ul.mdl-mega-footer__link-list
-        li: a[href="#"] Questions
-        li: a[href="#"] Contact us
+  /.mdl-mega-footer__middle-section
+  /  .mdl-mega-footer__drop-down-section
+  /    input.mdl-mega-footer__heading-checkbox[type="checkbox" checked]
+  /    h1.mdl-mega-footer__heading  Information
+  /    ul.mdl-mega-footer__link-list
+  /      li= link_to t(:about), main_app.about_path(locale: :"en-US")
+  /      li= link_to t(:contacts), main_app.contacts_path(locale: :"en-US")
+  /
+  /  .mdl-mega-footer__drop-down-section
+  /    input.mdl-mega-footer__heading-checkbox[type="checkbox" checked]
+  /    h1.mdl-mega-footer__heading Details
+  /    ul.mdl-mega-footer__link-list
+  /      li: a[href="#"] Specs
+  /      li: a[href="#"] Tools
+  /      li: a[href="#"] Resources
+  /
+  /  .mdl-mega-footer__drop-down-section
+  /    input.mdl-mega-footer__heading-checkbox[type="checkbox" checked]
+  /    h1.mdl-mega-footer__heading Technology
+  /    ul.mdl-mega-footer__link-list
+  /      li: a[href="#"] How it works
+  /      li: a[href="#"] Products
+  /
+  /  .mdl-mega-footer__drop-down-section
+  /    input.mdl-mega-footer__heading-checkbox[type="checkbox" checked]
+  /    h1.mdl-mega-footer__heading
+  /      | FAQ
+  /    ul.mdl-mega-footer__link-list
+  /      li: a[href="#"] Questions
+  /      li: a[href="#"] Contact us
+  /
+  /  .mdl-mega-footer__drop-down-section
+  /    input.mdl-mega-footer__heading-checkbox[type="checkbox" checked]
+  /    h1.mdl-mega-footer__heading
+  /      | FAQ
+  /    ul.mdl-mega-footer__link-list
+  /      li: a[href="#"] Questions
+  /      li: a[href="#"] Contact us
 
   .mdl-mega-footer__bottom-section
-    .mdl-logo SPARKY PROFESSIONAL TOOLS
+    .mdl-logo= link_to "SPARKY PROFESSIONAL TOOLS", "//www.sparky.md"
     ul.mdl-mega-footer__link-list
-      li: a[href=""] Help
-      li: a[href="#"] Privacy & Terms
+      li= link_to t(:contacts), main_app.contacts_path(locale: I18n.locale)
+      li= link_to t(:about), main_app.about_path(locale: I18n.locale)
+      li.address
+        = I18n.t('home.contact.str')
+        br/
+        = I18n.t('home.contact.city')
+        br/
+        | Tel.: +373 22 846 300
+        br/
+        | Fax : +373 22 846 400
+        br/
+        | e-mail: delta-instrument@mail.ru
