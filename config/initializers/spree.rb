@@ -13,9 +13,7 @@ Spree.config do |config|
   config.currency = "MDL"
   config.products_per_page = 20
   config.max_level_in_taxons_menu = 5
-
-  # from address for transactional emails
-  # config.mails_from = "store@example.com"
+  config.mails_from = "info@sparky.md"
 
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
@@ -26,17 +24,9 @@ Spree.config do |config|
   # config.inventory_cache_threshold = 3
 
   # Frontend:
-
-  # Custom logo for the frontend
   config.logo = "sparky/logo.png"
 
-  # Template to use when rendering layout
-  # config.layout = "spree/layouts/spree_application"
-
-
   # Admin:
-
-  # Custom logo for the admin
   config.admin_interface_logo = "sparky/logo.png"
 
   # Gateway credentials can be configured statically here and referenced from
