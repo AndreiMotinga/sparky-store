@@ -29,7 +29,7 @@ $(function(){
 function checkCompareButton() {
   if(window.ToolsStore.ids.length) {
     $("#compare-link").show("slide");
-    $("#compare-link").attr("href", "/compare?" + $.param({ids: window.ToolsStore.ids}))
+    $("#compare-link").attr("href", "/compare?locale=" + Spree.url_params.locale + "&" + $.param({ids: window.ToolsStore.ids}))
   } else {
     $("#compare-link").hide("slide");
   }

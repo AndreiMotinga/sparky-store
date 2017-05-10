@@ -27,5 +27,9 @@
   </div>
   <%= render "spree/shared/scroll_top" %>
   <%= render "ga" %>
+  <%= javascript_tag do %>
+    Spree.url_params = {}
+    Spree.url_params["locale"] = "<%= I18n.locale %>";
+  <% end %>
 </body>
 </html>
